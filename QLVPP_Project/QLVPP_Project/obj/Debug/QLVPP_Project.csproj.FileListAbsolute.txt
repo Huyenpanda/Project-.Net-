@@ -1,0 +1,10 @@
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe.config
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.pdb
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.AssemblyReference.cache
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.frmLogin.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.Properties.Resources.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.GenerateResource.cache
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.CoreCompileInputs.cache
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.exe
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.pdb
