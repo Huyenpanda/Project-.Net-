@@ -1,0 +1,13 @@
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe.config
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.pdb
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.AssemblyReference.cache
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.Properties.Resources.resources
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.GenerateResource.cache
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.CoreCompileInputs.cache
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.exe
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.pdb
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.FormQuanLySanPham.resources
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_SideBar.resources
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_BodyQLSP.resources
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_HeaderQLSP.resources
