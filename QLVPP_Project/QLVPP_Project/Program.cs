@@ -16,7 +16,11 @@ namespace QLVPP_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new FormQuanLySanPham());
+=======
+            Application.Run(new frmLogin());
+>>>>>>> 3b1d023059ae55dbadc6e197969ec2c40f334a88
         }
     }
 }

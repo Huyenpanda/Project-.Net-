@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe.config
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.pdb
@@ -11,3 +12,15 @@ C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.FormQuanLySa
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_SideBar.resources
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_BodyQLSP.resources
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_HeaderQLSP.resources
+=======
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe.config
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.exe
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\bin\Debug\QLVPP_Project.pdb
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.AssemblyReference.cache
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.frmLogin.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.Properties.Resources.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.GenerateResource.cache
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.csproj.CoreCompileInputs.cache
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.exe
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.pdb
+>>>>>>> 3b1d023059ae55dbadc6e197969ec2c40f334a88
