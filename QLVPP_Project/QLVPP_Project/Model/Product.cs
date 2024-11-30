@@ -15,16 +15,18 @@ namespace QLVPP_Project.Model
         private string unit;
         private string imgUrl;
         private int categoryId;
+        public string CategoryName { get; set; }
 
-        public Product(int productId, string productName, string description, double price, string unit, string IMGUrl, int categoryId)
+        public Product(int productId, string productName, string description, double price, string unit, string imgUrl, int categoryId, string categoryName)
         {
-            this.productId = productId;
-            this.productName = productName;
-            this.description = description;
-            this.price = price;
-            this.unit = unit;
-            imgUrl = IMGUrl;
-            this.categoryId = categoryId;
+            ProductId = productId;
+            ProductName = productName;
+            Description = description;
+            Price = price;
+            Unit = unit;
+            ImgUrl = imgUrl;
+            CategoryId = categoryId;
+            CategoryName = categoryName;
         }
 
         public Product(string productName, string description, double price, string unit, string IMGUrl, int categoryId)

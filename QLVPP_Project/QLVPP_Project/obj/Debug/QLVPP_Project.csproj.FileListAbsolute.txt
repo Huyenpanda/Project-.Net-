@@ -24,3 +24,4 @@ D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\
 D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.exe
 D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.pdb
 >>>>>>> 3b1d023059ae55dbadc6e197969ec2c40f334a88
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.frmLogin.resources
