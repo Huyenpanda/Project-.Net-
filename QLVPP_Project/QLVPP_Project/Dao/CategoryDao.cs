@@ -1,6 +1,7 @@
 ﻿using QLVPP_Project.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace QLVPP_Project.Dao
@@ -9,24 +10,10 @@ namespace QLVPP_Project.Dao
     {
         string connectString = ConnectionManager.getConnectString();
 
-        public List<Category> getAll()
+        public DataTable getAll()
         {
-            List<Category> categories = new List<Category>();
-            using (SqlConnection conn = new SqlConnection(connectString))
-            {
-                conn.Open();
-                string sql = "SELECT * FROM Category";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    categories.Add(new Category(
-                        (int)reader["CategoryId"],
-                        (string)reader["CategoryName"]
-                    ));
-                }
-                return categories;
-            }
+            DataTable data = new DataTable();
+            return data;
         }
 
         public Category getById(int id)

@@ -12,10 +12,10 @@ namespace QLVPP_Project
         private void InitializeComponent()
         {
             this.panel_SideBar = new System.Windows.Forms.Panel();
+            this.buttonThoat = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button_QuanLySanPham = new System.Windows.Forms.Button();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
-            this.buttonThoat = new System.Windows.Forms.Button();
             this.panel_SideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.SuspendLayout();
@@ -31,6 +31,17 @@ namespace QLVPP_Project
             this.panel_SideBar.Name = "panel_SideBar";
             this.panel_SideBar.Size = new System.Drawing.Size(300, 950);
             this.panel_SideBar.TabIndex = 0;
+            // 
+            // buttonThoat
+            // 
+            this.buttonThoat.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(56)))), ((int)(((byte)(57)))));
+            this.buttonThoat.Location = new System.Drawing.Point(67, 854);
+            this.buttonThoat.Name = "buttonThoat";
+            this.buttonThoat.Size = new System.Drawing.Size(137, 45);
+            this.buttonThoat.TabIndex = 5;
+            this.buttonThoat.Text = "Thoát";
+            this.buttonThoat.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -68,17 +79,6 @@ namespace QLVPP_Project
             this.pictureBox_logo.Size = new System.Drawing.Size(300, 257);
             this.pictureBox_logo.TabIndex = 0;
             this.pictureBox_logo.TabStop = false;
-            // 
-            // buttonThoat
-            // 
-            this.buttonThoat.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(56)))), ((int)(((byte)(57)))));
-            this.buttonThoat.Location = new System.Drawing.Point(67, 854);
-            this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(137, 45);
-            this.buttonThoat.TabIndex = 5;
-            this.buttonThoat.Text = "Thoát";
-            this.buttonThoat.UseVisualStyleBackColor = true;
             // 
             // UserControl_SideBar
             // 
