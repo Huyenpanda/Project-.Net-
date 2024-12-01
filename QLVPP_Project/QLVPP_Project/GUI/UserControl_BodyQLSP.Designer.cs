@@ -124,6 +124,7 @@
             this.dataGridViewQLSP.RowTemplate.Height = 24;
             this.dataGridViewQLSP.Size = new System.Drawing.Size(993, 571);
             this.dataGridViewQLSP.TabIndex = 7;
+            this.dataGridViewQLSP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQLSP_CellContentClick);
             // 
             // UserControl_BodyQLSP
             // 

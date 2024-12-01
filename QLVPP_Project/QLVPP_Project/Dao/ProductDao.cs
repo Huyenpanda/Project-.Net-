@@ -1,6 +1,5 @@
 ﻿using QLVPP_Project.Model;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -10,52 +9,30 @@ namespace QLVPP_Project.Dao
     {
         string connectString = ConnectionManager.getConnectString();
 
-        public List<Product> getAll()
+        private static ProductDao instance;
+
+        public static ProductDao Instance 
         {
-            List<Product> products = new List<Product>();
+            get {if (instance == null) instance = new ProductDao(); return ProductDao.instance; }
+            private set { ProductDao.instance = value; }
+            
+        }
+        public ProductDao() { }
+
+        public DataTable getAll()
+        {
+            DataTable data = new DataTable();
             using (SqlConnection conn = new SqlConnection(connectString))
             {
                 conn.Open();
-                string sql = @"
-        SELECT p.ProductId, p.ProductName, p.Description, p.Price, p.Unit, p.ImgUrl, p.CategoryId, c.CategoryName
-        FROM Product p 
-        JOIN Category c ON p.CategoryId = c.CategoryId";
+                string sql = "Select * from Product";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    products.Add(new Product(
-                        reader["ProductId"] == DBNull.Value ? 0 : Convert.ToInt32(reader["ProductId"]),
-                        reader["ProductName"] == DBNull.Value ? "" : reader["ProductName"].ToString(),
-                        reader["Description"] == DBNull.Value ? "" : reader["Description"].ToString(),
-                        reader["Price"] == DBNull.Value ? 0.0 : Convert.ToDouble(reader["Price"]),
-                        reader["Unit"] == DBNull.Value ? "" : reader["Unit"].ToString(),
-                        reader["ImgUrl"] == DBNull.Value ? "" : reader["ImgUrl"].ToString(),
-                        reader["CategoryId"] == DBNull.Value ? 0 : Convert.ToInt32(reader["CategoryId"]),
-                        reader["CategoryName"] == DBNull.Value ? "" : reader["CategoryName"].ToString()
-                    ));
-                }
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                adap.Fill(data);
+                conn.Close();
             }
-            return products;
+            return data;
         }
-
-        public DataTable ConvertToDataTable(List<Product> products)
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ProductName", typeof(string));
-            dt.Columns.Add("Price", typeof(double));
-            dt.Columns.Add("Unit", typeof(string));
-            dt.Columns.Add("CategoryName", typeof(string)); // Đúng là CategoryName
-            dt.Columns.Add("Description", typeof(string));
-
-            foreach (var product in products)
-            {
-                dt.Rows.Add(product.ProductName, product.Price, product.Unit, product.CategoryName, product.Description);
-            }
-
-            return dt;
-        }
-
 
 
         public Product getById(int id)
@@ -65,7 +42,7 @@ namespace QLVPP_Project.Dao
 
         public bool Insert(Product model)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         public bool Update(Product model)
