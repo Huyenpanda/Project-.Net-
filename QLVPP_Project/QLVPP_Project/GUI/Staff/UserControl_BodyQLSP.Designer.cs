@@ -50,6 +50,7 @@
             this.buttonThem.TabIndex = 0;
             this.buttonThem.Text = "Thêm";
             this.buttonThem.UseVisualStyleBackColor = true;
+            this.buttonThem.Click += new System.EventHandler(this.buttonThem_Click);
             // 
             // buttonSua
             // 
@@ -61,6 +62,7 @@
             this.buttonSua.TabIndex = 1;
             this.buttonSua.Text = "Sửa";
             this.buttonSua.UseVisualStyleBackColor = true;
+            this.buttonSua.Click += new System.EventHandler(this.buttonSua_Click);
             // 
             // buttonXoa
             // 
@@ -72,6 +74,7 @@
             this.buttonXoa.TabIndex = 2;
             this.buttonXoa.Text = "Xóa";
             this.buttonXoa.UseVisualStyleBackColor = true;
+            this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
             // labelTenOrMa
             // 
@@ -116,7 +119,10 @@
             // 
             this.dataGridViewQLSP.AllowUserToAddRows = false;
             this.dataGridViewQLSP.AllowUserToDeleteRows = false;
-            this.dataGridViewQLSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQLSP.AllowUserToResizeColumns = false;
+            this.dataGridViewQLSP.AllowUserToResizeRows = false;
+            this.dataGridViewQLSP.ColumnHeadersHeight = 29;
+            this.dataGridViewQLSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewQLSP.Location = new System.Drawing.Point(172, 360);
             this.dataGridViewQLSP.Name = "dataGridViewQLSP";
             this.dataGridViewQLSP.ReadOnly = true;
@@ -124,7 +130,6 @@
             this.dataGridViewQLSP.RowTemplate.Height = 24;
             this.dataGridViewQLSP.Size = new System.Drawing.Size(993, 571);
             this.dataGridViewQLSP.TabIndex = 7;
-            this.dataGridViewQLSP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewQLSP_CellContentClick);
             // 
             // UserControl_BodyQLSP
             // 

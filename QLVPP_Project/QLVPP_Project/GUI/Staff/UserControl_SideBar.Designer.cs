@@ -42,6 +42,7 @@ namespace QLVPP_Project
             this.buttonThoat.TabIndex = 5;
             this.buttonThoat.Text = "Thoát";
             this.buttonThoat.UseVisualStyleBackColor = true;
+            this.buttonThoat.Click += new System.EventHandler(this.buttonThoat_Click);
             // 
             // button2
             // 

@@ -63,20 +63,26 @@
   <ItemGroup>
     <Compile Include="Dao\AccountDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
-    <Compile Include="GUI\FormQuanLySanPham.cs">
+    <Compile Include="GUI\Staff\FormQuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\FormQuanLySanPham.Designer.cs">
+    <Compile Include="GUI\Staff\FormQuanLySanPham.Designer.cs">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Dao\ConnectionManager.cs" />
     <Compile Include="Dao\ModelDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />
-    <Compile Include="GUI\frmLogin.cs">
+    <Compile Include="GUI\Staff\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmLogin.Designer.cs">
+    <Compile Include="GUI\Staff\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Staff\UserControlThemSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff\UserControlThemSanPham.Designer.cs">
+      <DependentUpon>UserControlThemSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Category.cs" />
@@ -89,22 +95,22 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="test.cs" />
-    <Compile Include="GUI\UserControl_HeaderQLSP.cs">
+    <Compile Include="GUI\Staff\UserControl_HeaderQLSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl_HeaderQLSP.Designer.cs">
+    <Compile Include="GUI\Staff\UserControl_HeaderQLSP.Designer.cs">
       <DependentUpon>UserControl_HeaderQLSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl_BodyQLSP.cs">
+    <Compile Include="GUI\Staff\UserControl_BodyQLSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl_BodyQLSP.Designer.cs">
+    <Compile Include="GUI\Staff\UserControl_BodyQLSP.Designer.cs">
       <DependentUpon>UserControl_BodyQLSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControl_SideBar.cs">
+    <Compile Include="GUI\Staff\UserControl_SideBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControl_SideBar.Designer.cs">
+    <Compile Include="GUI\Staff\UserControl_SideBar.Designer.cs">
       <DependentUpon>UserControl_SideBar.cs</DependentUpon>
     </Compile>
     <Compile Include="VanPhongPhamDataSet.Designer.cs">
@@ -112,11 +118,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VanPhongPhamDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\FormQuanLySanPham.resx">
+    <EmbeddedResource Include="GUI\Staff\FormQuanLySanPham.resx">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmLogin.resx">
+    <EmbeddedResource Include="GUI\Staff\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff\UserControlThemSanPham.resx">
+      <DependentUpon>UserControlThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,13 +137,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="GUI\UserControl_BodyQLSP.resx">
+    <EmbeddedResource Include="GUI\Staff\UserControl_BodyQLSP.resx">
       <DependentUpon>UserControl_BodyQLSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl_HeaderQLSP.resx">
+    <EmbeddedResource Include="GUI\Staff\UserControl_HeaderQLSP.resx">
       <DependentUpon>UserControl_HeaderQLSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControl_SideBar.resx">
+    <EmbeddedResource Include="GUI\Staff\UserControl_SideBar.resx">
       <DependentUpon>UserControl_SideBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -181,7 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\admin\" />
-    <Folder Include="GUI\staff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

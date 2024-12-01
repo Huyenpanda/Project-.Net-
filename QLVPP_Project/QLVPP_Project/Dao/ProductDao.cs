@@ -33,6 +33,29 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
+        public DataTable getAllAndCategoryName()
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = @"
+            SELECT 
+                p.ProductId, 
+                p.ProductName, 
+                p.Price, 
+                p.Unit, 
+                c.CategoryName, 
+                p.Description
+            FROM Product p
+            JOIN Category c ON p.CategoryId = c.CategoryId";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                adap.Fill(data);
+                conn.Close();
+            }
+            return data;
+        }
 
 
         public Product getById(int id)
@@ -51,7 +74,20 @@ namespace QLVPP_Project.Dao
         }
         public bool Delete(int id)
         {
-            return false;
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = "DELETE FROM Product WHERE ProductId = @ProductId";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ProductId", id);
+
+                int rows = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                // Kiểm tra nếu xóa thành công
+                return rows > 0;
+            }
         }
+
     }
 }

@@ -28,5 +28,10 @@ namespace QLVPP_Project
                 formQuanLySanPham.Show();
             }
         }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
