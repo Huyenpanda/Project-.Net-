@@ -161,3 +161,11 @@ INSERT INTO [OrderDetail] ([ProductId], [Quantity], [Total], [OrderId], [Status]
 (12, 2, 299.98, 1, 1),
 (10, 3, 2399.97, 3, 1),
 (14, 12, 71.88, 5, 1);
+
+
+
+Select * from Account 
+
+ALTER TABLE [Product] ALTER COLUMN [Price] Decimal(12, 2);
+ALTER TABLE [Order] ALTER COLUMN [Total] Decimal(12, 2);
+ALTER TABLE [OrderDetail] ALTER COLUMN [Total] Decimal(12, 2);

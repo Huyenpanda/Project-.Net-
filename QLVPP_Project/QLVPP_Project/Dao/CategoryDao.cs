@@ -10,9 +10,28 @@ namespace QLVPP_Project.Dao
     {
         string connectString = ConnectionManager.getConnectString();
 
+        private static CategoryDao instance;
+
+        internal static CategoryDao Instance 
+        {
+            get { if (instance == null) instance = new CategoryDao(); return CategoryDao.instance; }
+            private set { CategoryDao.instance = value; }
+        }
+
+        public CategoryDao() { }
+
         public DataTable getAll()
         {
             DataTable data = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = "Select * from Category";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                adap.Fill(data);
+                conn.Close();
+            }
             return data;
         }
 

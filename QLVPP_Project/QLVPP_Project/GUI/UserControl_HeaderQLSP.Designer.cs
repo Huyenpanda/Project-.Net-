@@ -53,7 +53,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UserControl_HeaderQLSP";
-            this.Size = new System.Drawing.Size(1100, 150);
+            this.Size = new System.Drawing.Size(1100, 162);
             this.ResumeLayout(false);
             this.PerformLayout();
 

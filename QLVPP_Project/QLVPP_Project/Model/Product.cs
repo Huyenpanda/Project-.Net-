@@ -29,6 +29,17 @@ namespace QLVPP_Project.Model
             CategoryName = categoryName;
         }
 
+        public Product(int productId,string productName, string description, double price, string unit, string imgUrl, int categoryId)
+        {
+            ProductId = productId;
+            ProductName = productName;
+            Description = description;
+            Price = price;
+            Unit = unit;
+            ImgUrl = imgUrl;
+            CategoryId = categoryId;
+        }
+
         public Product(string productName, string description, double price, string unit, string IMGUrl, int categoryId)
         {
             this.productName = productName;
