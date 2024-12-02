@@ -7,6 +7,7 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLSP.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControlThemSanPham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QLVPP_Project\\GUI\\Staff\\UserControlThemSanPham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +18,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\usercontrolthemsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:qlvpp_project\\gui\\staff\\usercontrolthemsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|d:\\learn\\subject\\.net\\projectquanlyvanphongpham\\qlvpp_project\\qlvpp_project\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 6867cce3de916b05bb8ff345a2aa74d0550e37c6
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\CategoryDao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,6 +51,44 @@
           "Children": [
             {
               "$type": "Bookmark",
+<<<<<<< HEAD
+=======
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmTrangChu.cs [Design]",
+              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
+              "RelativeToolTip": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T13:29:45.29Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmTrangChu.cs",
+              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "RelativeToolTip": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "ViewState": "AgIAADQBAAAAAAAAAAAqwFYBAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T13:49:32.69Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+>>>>>>> 6867cce3de916b05bb8ff345a2aa74d0550e37c6
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
@@ -49,11 +96,8 @@
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "UserControlThemSanPham.cs",
               "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControlThemSanPham.cs",
@@ -76,11 +120,23 @@
               "ViewState": "AQIAAF4AAAAAAAAAAAApwIQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T17:32:55.887Z",
+=======
+              "DocumentIndex": 2,
+              "Title": "AccountDao.cs",
+              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\Dao\\AccountDao.cs",
+              "RelativeDocumentMoniker": "QLVPP_Project\\Dao\\AccountDao.cs",
+              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\Dao\\AccountDao.cs",
+              "RelativeToolTip": "QLVPP_Project\\Dao\\AccountDao.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAowMUAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T07:35:02.92Z",
+>>>>>>> 6867cce3de916b05bb8ff345a2aa74d0550e37c6
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+<<<<<<< HEAD
               "Title": "UserControlThemSanPham.cs [Design]",
               "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControlThemSanPham.cs",
               "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\UserControlThemSanPham.cs",
@@ -140,6 +196,16 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T16:23:08.936Z",
               "EditorCaption": ""
+=======
+              "Title": "ModelExcel.cs",
+              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\Model\\ModelExcel.cs",
+              "RelativeDocumentMoniker": "QLVPP_Project\\Model\\ModelExcel.cs",
+              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\Model\\ModelExcel.cs",
+              "RelativeToolTip": "QLVPP_Project\\Model\\ModelExcel.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T16:26:07.92Z"
+>>>>>>> 6867cce3de916b05bb8ff345a2aa74d0550e37c6
             }
           ]
         }

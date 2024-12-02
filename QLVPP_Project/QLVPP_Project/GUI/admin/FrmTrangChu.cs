@@ -15,6 +15,7 @@ namespace QLVPP_Project.GUI.admin
     public partial class FrmTrangChu : Form
     {
         private int selectedRowIndex = -1;
+        private int selectedRowIndexAccount = -1;
         public FrmTrangChu()
         {
             InitializeComponent();
@@ -35,20 +36,48 @@ namespace QLVPP_Project.GUI.admin
             cbbCategory.DisplayMember = "CategoryName";
             cbbCategory.ValueMember = "CategoryId";
         }
+        // DataTable Account
+        private void dataTableGirdViewAccount(DataTable data)
+        {
+            dtgrvAccount.DataSource = null;
+            dtgrvAccount.DataSource = data;
+        }
+        // DataCbb Role and RoleFind
+        private void dataCbbRoleAccount()
+        {
+            DataTable data = new AccountDao().getAll();
+            HashSet<string> roles = new HashSet<string>();
+            foreach (DataRow row in data.Rows)
+            {
+                roles.Add(row["Role"].ToString());
+            }
+            List<String> roleList1 = new List<string>(roles);
+            List<String> roleList2 = new List<string>(roles);
+
+            CbbRole.DataSource = roleList1;
+            CbbRoleFind.DataSource = roleList2;
+
+        }
+
 
         private void btnQLSP_Click(object sender, EventArgs e)
         {
             panelQLSP.BringToFront();
+            LabelMain.Text = "Quản Lý Sản Phẩm";
         }
 
         private void btnQLTK_Click(object sender, EventArgs e)
         {
             panelQLTK.BringToFront();
+            LabelMain.Text = "Quản Lý Tài Khoản";
+            dataTableGirdViewAccount(new AccountDao().getAll());
+            dataCbbRoleAccount();
         }
 
         private void btnBCTK_Click(object sender, EventArgs e)
         {
             panelBCTK.BringToFront();
+            LabelMain.Text = "Báo Cáo Thống Kê";
         }
 
         // Insert Product
@@ -221,6 +250,97 @@ namespace QLVPP_Project.GUI.admin
 
             DataTable findDataTable = ProductDao.Instance.searchByNameAndPrice(proNameToFind, fromPrice, toPrice);
             dataTableGridViewProduct(findDataTable);
+
+
+        }
+        // Thoát đăng nhập
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
+        // Insert Account
+        private void BtnInsertAccount_Click(object sender, EventArgs e)
+        {
+            string accName = TxtAccountName.Text;
+            string role = CbbRole.SelectedItem.ToString();
+            string userName = TxtUsername.Text;
+            string password = TxtPassword.Text;
+            string email = TxtEmail.Text;
+            string phone = TxtPhone.Text;
+
+            if (!string.IsNullOrEmpty(accName) && !string.IsNullOrEmpty(role) && !string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(phone))
+            {
+                Account newAcc = new Account(accName, role, userName, new Cypher().cypherSHA1(password), email, phone);
+                if(new AccountDao().Insert(newAcc))
+                {
+                    MessageBox.Show("Insert Account Success");
+                    dataTableGirdViewAccount(new AccountDao().getAll());
+                    TxtAccountName.Text = "";
+                    CbbRole.SelectedIndex = 0;
+                    TxtUsername.Text = "";
+                    TxtPassword.Text = "";
+                    TxtEmail.Text = "";
+                    TxtPhone.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Insert Account Fail");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng xem lại thông tin");
+                return;
+            }
+
+
+        }
+        // Delete Account
+        private void BtnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            if(selectedRowIndexAccount == -1)
+            {
+                MessageBox.Show("Vui lòng chọn account xóa");
+                return;
+            }
+            else
+            {
+                DialogResult rs = MessageBox.Show("Bạn có xác nhận xóa tài khoản này ko ?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    DataGridViewRow row = dtgrvAccount.Rows[selectedRowIndexAccount];
+                    int accId = Convert.ToInt32(row.Cells["AccountId"].Value);
+                    if(new AccountDao().Delete(accId))
+                    {
+                        MessageBox.Show("Delete Account Success");
+                        dataTableGirdViewAccount(new AccountDao().getAll());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Delete Account Fail");
+
+                        return;
+                    }
+                }
+                else
+                    return;
+            }
+        }
+
+        private void DtgrvAccount_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+                selectedRowIndexAccount = (int)e.RowIndex;
+        }
+        // Search Theo Role or AccountName
+        private void BtnSearchAccount_Click(object sender, EventArgs e)
+        {
+            string role = CbbRoleFind.SelectedItem.ToString();
+            string accountName = TxtAccountNameFind.Text;
+
+            DataTable data = new AccountDao().searchByRoleOrAccountName(role, accountName);
+            dataTableGirdViewAccount(data);
 
 
         }
