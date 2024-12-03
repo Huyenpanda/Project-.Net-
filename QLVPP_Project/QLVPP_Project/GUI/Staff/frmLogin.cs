@@ -1,4 +1,5 @@
 ﻿using QLVPP_Project.Dao;
+using QLVPP_Project.GUI.admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,21 +12,16 @@ using System.Windows.Forms;
 
 namespace QLVPP_Project
 {
-    public partial class frmLogin : Form
+    public partial class FrmLogin : Form
     {
-        public frmLogin()
+        public FrmLogin()
         {
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnExit_Click_1(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void btnLogin_Click_1(object sender, EventArgs e)
@@ -50,13 +46,15 @@ namespace QLVPP_Project
                 {
                     if (new AccountDao().isAdminOrStaff(un))
                     {
-                        // Dang nhap cho admin
-                        Console.WriteLine("Admin");
+                        this.Hide();
+                        FrmTrangChu newFrm = new FrmTrangChu();
+                        newFrm.Show();
                     }
                     else
                     {
-                        // Dang nhap cho staff
-                        Console.WriteLine("Staff");
+                        this.Hide();
+                        FormQuanLySanPham newFrm = new FormQuanLySanPham();
+                        newFrm.Show();
                     }
                 }
             }

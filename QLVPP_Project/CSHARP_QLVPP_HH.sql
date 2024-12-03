@@ -169,3 +169,45 @@ Select * from Account
 ALTER TABLE [Product] ALTER COLUMN [Price] Decimal(12, 2);
 ALTER TABLE [Order] ALTER COLUMN [Total] Decimal(12, 2);
 ALTER TABLE [OrderDetail] ALTER COLUMN [Total] Decimal(12, 2);
+
+
+-- Thong ke theo doanh thu theo thang (Order)
+SELECT 
+    MONTH(CreateDate) AS Month, 
+    SUM(Total) AS Revenue
+FROM [Order]
+GROUP BY MONTH(CreateDate)
+ORDER BY Month;
+
+-- Thong ke theo % san pham ban chay nhat (OrderDetail)
+WITH ProductSales AS (
+    SELECT 
+        p.ProductName, 
+        SUM(od.Quantity) AS TotalQuantity
+    FROM 
+        OrderDetail od
+    INNER JOIN 
+        Product p ON od.ProductId = p.ProductId
+    GROUP BY 
+        p.ProductName
+), RankedProducts AS (
+    SELECT 
+        ProductName, 
+        TotalQuantity,
+        ROW_NUMBER() OVER (ORDER BY TotalQuantity DESC) AS Rank
+    FROM 
+        ProductSales
+)
+SELECT 
+    CASE 
+        WHEN Rank <= 5 THEN ProductName
+        ELSE 'Other'
+    END AS ProductGroup,
+    SUM(TotalQuantity) AS TotalQuantity
+FROM 
+    RankedProducts
+GROUP BY 
+    CASE 
+        WHEN Rank <= 5 THEN ProductName
+        ELSE 'Other'
+    END;

@@ -11,6 +11,7 @@ namespace QLVPP_Project
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_SideBar));
             this.panel_SideBar = new System.Windows.Forms.Panel();
             this.buttonThoat = new System.Windows.Forms.Button();
             this.buttonQLDH = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@ namespace QLVPP_Project
             // 
             // buttonQLDH
             // 
+<<<<<<< HEAD
             this.buttonQLDH.BackgroundImage = global::QLVPP_Project.Properties.Resources.MaroonCloud_background;
             this.buttonQLDH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonQLDH.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
@@ -57,16 +59,28 @@ namespace QLVPP_Project
             this.buttonQLDH.Text = "Quản Lý Đơn Hàng";
             this.buttonQLDH.UseVisualStyleBackColor = true;
             this.buttonQLDH.Click += new System.EventHandler(this.buttonQLDH_Click);
+=======
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(194)))));
+            this.button2.Location = new System.Drawing.Point(0, 357);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(300, 100);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Quản Lý Đơn Hàng";
+            this.button2.UseVisualStyleBackColor = true;
+>>>>>>> origin/develop
             // 
             // button_QuanLySanPham
             // 
-            this.button_QuanLySanPham.BackgroundImage = global::QLVPP_Project.Properties.Resources.MaroonCloud_background;
+            this.button_QuanLySanPham.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_QuanLySanPham.BackgroundImage")));
             this.button_QuanLySanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button_QuanLySanPham.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
             this.button_QuanLySanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(194)))));
-            this.button_QuanLySanPham.Location = new System.Drawing.Point(-32, 250);
+            this.button_QuanLySanPham.Location = new System.Drawing.Point(0, 251);
             this.button_QuanLySanPham.Name = "button_QuanLySanPham";
-            this.button_QuanLySanPham.Size = new System.Drawing.Size(364, 100);
+            this.button_QuanLySanPham.Size = new System.Drawing.Size(300, 100);
             this.button_QuanLySanPham.TabIndex = 1;
             this.button_QuanLySanPham.Text = "Quản Lý Sản phẩm";
             this.button_QuanLySanPham.UseVisualStyleBackColor = true;
@@ -74,11 +88,13 @@ namespace QLVPP_Project
             // 
             // pictureBox_logo
             // 
-            this.pictureBox_logo.BackgroundImage = global::QLVPP_Project.Properties.Resources.logo_stationery_store;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_logo.ErrorImage = null;
+            this.pictureBox_logo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_logo.Image")));
             this.pictureBox_logo.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_logo.Name = "pictureBox_logo";
             this.pictureBox_logo.Size = new System.Drawing.Size(300, 257);
+            this.pictureBox_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_logo.TabIndex = 0;
             this.pictureBox_logo.TabStop = false;
             // 
