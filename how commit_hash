@@ -1,0 +1,140 @@
+[33mcommit 3f1b17ccdd29cc38e5935536526988a8bac93a6e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Merge: c7364cb 6867cce
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Mon Dec 2 23:39:39 2024 +0700
+
+    Resolved conflicts
+
+[33mcommit 6867cce3de916b05bb8ff345a2aa74d0550e37c6[m
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Mon Dec 2 15:34:17 2024 +0700
+
+    Done QuanLyTaiKhoan
+
+[33mcommit c7364cbe198d5a2048459e49e3021604c50af815[m
+Merge: 6824315 647bacc
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Mon Dec 2 02:08:30 2024 +0700
+
+    Lưu các thay đổi cục bộ trước khi pull
+
+[33mcommit 6824315751d4ac658c2651b7a50639589c947a17[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Mon Dec 2 01:55:58 2024 +0700
+
+    Lưu các thay đổi cục bộ trước khi pull
+
+[33mcommit 647baccb816f5621609d579943415345e420d9f8[m
+Merge: 806aba0 d472fca
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Mon Dec 2 01:47:19 2024 +0700
+
+    Fix conflict DocumentLayout
+
+[33mcommit 806aba072bc8fa71cc310b3e33d10305fb154d54[m
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Mon Dec 2 00:47:10 2024 +0700
+
+    Done Frm QuanLySanPham cho Admin
+
+[33mcommit d472fcacb3aa8a5d0cfee99b535ef937d09bc755[m
+Merge: 47c6fb2 4f2145e
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sun Dec 1 23:18:24 2024 +0700
+
+    Resolved merge conflicts for binary files
+
+[33mcommit 47c6fb299e999e4674c4892919e26eaf08c66b8e[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sun Dec 1 23:14:33 2024 +0700
+
+    add
+
+[33mcommit 97f7fb3bf98de648f029a3457df24659d8a38c6c[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sun Dec 1 23:11:30 2024 +0700
+
+    add
+
+[33mcommit 4f2145e15143f649f27c188ccf39bb05765bdfcb[m
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Sun Dec 1 13:47:31 2024 +0700
+
+    Done Login
+
+[33mcommit 6ca783d0355c0aa7cd237533d12a121798bfa7a9[m
+Merge: 1946229 a3786c4
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Sun Dec 1 10:41:22 2024 +0700
+
+    Resolve confilct .gitignore
+
+[33mcommit 194622965d20527c780bf3c983c3aadbdd417418[m
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Sun Dec 1 10:36:40 2024 +0700
+
+    Commit reset
+
+[33mcommit a3786c429e27b2a5a1ba9e2f417c4d95bb688999[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sun Dec 1 05:35:56 2024 +0700
+
+    add files
+
+[33mcommit 0962c09eb1b417f8cabdf32b11978bf8b7e13880[m
+Merge: 4dc4744 3b1d023
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sat Nov 30 18:09:17 2024 +0700
+
+    add
+
+[33mcommit 4dc474440c9e357f17af04638ce21c640e2a4f35[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sat Nov 30 17:22:35 2024 +0700
+
+    Add files
+
+[33mcommit 07def7597361f023cd6d9f79e0ee70da5c6feb3c[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Sat Nov 30 17:06:33 2024 +0700
+
+    Add .vs folder to .gitignore
+
+[33mcommit 3b1d023059ae55dbadc6e197969ec2c40f334a88[m
+Author: HuyGiaJerry <huyfin2004@gmail.com>
+Date:   Sat Nov 30 16:36:02 2024 +0700
+
+    Done Model
+
+[33mcommit a582205312aa84e39af52c70aaae0ca24e283681[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Wed Nov 13 09:17:20 2024 +0700
+
+    add file Test
+
+[33mcommit e679f74e47413d8a63ef4ef66bfac3e016a1d611[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 4fd0daa 7d8e341
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Wed Nov 13 08:55:52 2024 +0700
+
+    fix
+
+[33mcommit 4fd0daa459d341d5e4b7cb0c1632f4c27b4eca45[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Wed Nov 13 08:42:48 2024 +0700
+
+    sua ten file
+
+[33mcommit 7f0c299ec9b102cd76561e71174350991fa5f8f6[m
+Author: Huyenpanda <Huyenpanda19@gmail.com>
+Date:   Wed Nov 13 08:30:01 2024 +0700
+
+    init project
+
+[33mcommit 7d8e341580f8a075c3396a00410a66ffab281fe9[m
+Author: Huyenpanda <156454092+Huyenpanda@users.noreply.github.com>
+Date:   Wed Nov 13 08:06:25 2024 +0700
+
+    Create README.md
+    
+    file readme

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using QLVPP_Project.GUI.Staff;
 
 namespace QLVPP_Project
 {
@@ -63,13 +64,43 @@ namespace QLVPP_Project
        
         private void buttonThem_Click(object sender, EventArgs e)
         {
-
+            // Hiển thị FormThemSP với thông tin sản phẩm cần sửa
+            FormThemSP formThemSP = new FormThemSP();
+            formThemSP.ShowDialog();
+            LoadData(); // Tải lại dữ liệu sau khi chỉnh sửa
         }
 
         private void buttonSua_Click(object sender, EventArgs e)
         {
+            if (dataGridViewQLSP.SelectedRows.Count == 1)
+            {
+                // Lấy dòng được chọn
+                DataGridViewRow selectedRow = dataGridViewQLSP.SelectedRows[0];
 
+                // Tạo đối tượng Product từ thông tin dòng được chọn
+                Product selectedProduct = new Product
+                {
+                    ProductId = Convert.ToInt32(selectedRow.Cells["ProductId"].Value),
+                    ProductName = selectedRow.Cells["ProductName"].Value.ToString(),
+                    Price = Convert.ToDouble(selectedRow.Cells["Price"].Value),
+                    Unit = selectedRow.Cells["Unit"].Value.ToString(),
+                    Description = selectedRow.Cells["Description"].Value.ToString(),
+                    CategoryId = CategoryDao.Instance.GetCategoryIdByName(selectedRow.Cells["CategoryName"].Value.ToString())
+                };
+
+                // Hiển thị FormThemSP với thông tin sản phẩm
+                FormThemSP formThemSP = new FormThemSP(selectedProduct);
+                formThemSP.ShowDialog();
+
+                // Tải lại dữ liệu sau khi sửa
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng để sửa thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
 
         private void buttonXoa_Click(object sender, EventArgs e)
         {
@@ -103,5 +134,24 @@ namespace QLVPP_Project
             }
         }
 
+        private void textBoxTimKiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserControl_BodyQLSP_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

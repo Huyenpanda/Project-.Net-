@@ -100,14 +100,13 @@
     <Compile Include="Dao\AccountDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
     <Compile Include="GUI\Staff\FormQuanLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\admin\FrmTrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\admin\FrmTrangChu.Designer.cs">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\FormQuanLySanPham.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Staff\FormQuanLySanPham.Designer.cs">
       <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
@@ -115,6 +114,12 @@
     <Compile Include="Dao\ConnectionManager.cs" />
     <Compile Include="Dao\ModelDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />
+    <Compile Include="GUI\Staff\FormThemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff\FormThemSP.Designer.cs">
+      <DependentUpon>FormThemSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Staff\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,15 +167,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VanPhongPhamDataSet.xsd</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="GUI\Staff\FormQuanLySanPham.resx">
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\admin\FrmTrangChu.resx">
       <DependentUpon>FrmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\FormQuanLySanPham.resx">
->>>>>>> 647baccb816f5621609d579943415345e420d9f8
-      <DependentUpon>FormQuanLySanPham.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Staff\FormThemSP.resx">
+      <DependentUpon>FormThemSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Staff\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -240,12 +243,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-<<<<<<< HEAD
-    <Folder Include="GUI\admin\" />
-=======
-    <Folder Include="GUI\staff\" />
->>>>>>> 647baccb816f5621609d579943415345e420d9f8
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
