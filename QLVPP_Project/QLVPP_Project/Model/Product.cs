@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QLVPP_Project.Model
 {
-    class Product
+    public class Product
     {
         private int productId;
         private string productName;
@@ -28,7 +28,9 @@ namespace QLVPP_Project.Model
             CategoryId = categoryId;
             CategoryName = categoryName;
         }
-
+        public Product()
+        {
+        }
         public Product(int productId,string productName, string description, double price, string unit, string imgUrl, int categoryId)
         {
             ProductId = productId;

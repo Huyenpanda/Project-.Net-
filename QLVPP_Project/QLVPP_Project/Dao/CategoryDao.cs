@@ -34,7 +34,21 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
+        public int GetCategoryIdByName(string categoryName)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = "SELECT CategoryId FROM Category WHERE CategoryName = @CategoryName";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@CategoryName", categoryName);
 
+                object result = cmd.ExecuteScalar();
+                conn.Close();
+
+                return result != null ? Convert.ToInt32(result) : -1; // Trả về -1 nếu không tìm thấy
+            }
+        }
         public Category getById(int id)
         {
             throw new NotImplementedException();

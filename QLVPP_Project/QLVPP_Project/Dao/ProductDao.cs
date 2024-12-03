@@ -57,10 +57,33 @@ namespace QLVPP_Project.Dao
             return data;
         }
 
-
-        public Product getById(int id)
+        public bool Update(Product model)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Description = @Description, " +
+                                 " CategoryId = @CategoryId, Unit = @Unit WHERE ProductId = @ProductId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@ProductName", model.ProductName);
+                    cmd.Parameters.AddWithValue("@Price", model.Price);
+                    cmd.Parameters.AddWithValue("@Description", model.Description);
+                    //cmd.Parameters.AddWithValue("@ImgUrl", model.ImgUrl);
+                    cmd.Parameters.AddWithValue("@CategoryId", model.CategoryId);
+                    cmd.Parameters.AddWithValue("@Unit", model.Unit);
+                    cmd.Parameters.AddWithValue("@ProductId", model.ProductId);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error ProductDao: {ex.Message}");
+                    return false;
+                }
+            }
         }
 
         public bool Insert(Product model)
@@ -90,35 +113,34 @@ namespace QLVPP_Project.Dao
                 }
             }
         }
-
-        public bool Update(Product model)
+        public bool InsertNewProduct(Product product)
         {
-            using (SqlConnection conn = new SqlConnection(connectString))
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connectString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Product SET ProductName = @ProductName, Price = @Price, Description = @Description, " +
-                                 "ImgUrl = @ImgUrl, CategoryId = @CategoryId, Unit = @Unit WHERE ProductId = @ProductId";
+                    string sql = "INSERT INTO Product (ProductName, Price, Unit, Description, CategoryId) VALUES (@ProductName, @Price, @Unit, @Description, @CategoryId)";
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@ProductName", model.ProductName);
-                    cmd.Parameters.AddWithValue("@Price", model.Price);
-                    cmd.Parameters.AddWithValue("@Description", model.Description);
-                    cmd.Parameters.AddWithValue("@ImgUrl", model.ImgUrl);
-                    cmd.Parameters.AddWithValue("@CategoryId", model.CategoryId);
-                    cmd.Parameters.AddWithValue("@Unit", model.Unit);
-                    cmd.Parameters.AddWithValue("@ProductId", model.ProductId);
+                    cmd.Parameters.AddWithValue("@ProductName", product.ProductName);
+                    cmd.Parameters.AddWithValue("@Price", product.Price);
+                    cmd.Parameters.AddWithValue("@Unit", product.Unit);
+                    cmd.Parameters.AddWithValue("@Description", product.Description);
+                    cmd.Parameters.AddWithValue("@CategoryId", product.CategoryId);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error ProductDao: {ex.Message}");
-                    return false;
+
+                    return rowsAffected > 0; // Nếu có ít nhất một dòng được thêm vào, trả về true
                 }
             }
+            catch (Exception ex)
+            {
+                // Lỗi kết nối hoặc truy vấn sẽ được ném ra ngoài
+                throw new Exception("Đã xảy ra lỗi khi thêm sản phẩm: " + ex.Message);
+            }
         }
+
+       
         public bool Delete(int id)
         {
             using (SqlConnection conn = new SqlConnection(connectString))
@@ -180,5 +202,10 @@ namespace QLVPP_Project.Dao
             return dt;
         }
 
+
+        public Product getById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
