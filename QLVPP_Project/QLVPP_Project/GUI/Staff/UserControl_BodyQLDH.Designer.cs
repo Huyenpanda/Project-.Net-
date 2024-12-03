@@ -52,10 +52,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(411, 82);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(467, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 41);
+            this.label2.Size = new System.Drawing.Size(175, 50);
             this.label2.TabIndex = 1;
             this.label2.Text = "Hóa Đơn";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -64,7 +64,7 @@
             // 
             this.buttonThemHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonThemHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonThemHD.Location = new System.Drawing.Point(66, 179);
+            this.buttonThemHD.Location = new System.Drawing.Point(67, 146);
             this.buttonThemHD.Name = "buttonThemHD";
             this.buttonThemHD.Size = new System.Drawing.Size(116, 58);
             this.buttonThemHD.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.buttonSuaHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonSuaHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonSuaHD.Location = new System.Drawing.Point(217, 179);
+            this.buttonSuaHD.Location = new System.Drawing.Point(218, 146);
             this.buttonSuaHD.Name = "buttonSuaHD";
             this.buttonSuaHD.Size = new System.Drawing.Size(116, 58);
             this.buttonSuaHD.TabIndex = 3;
@@ -86,7 +86,7 @@
             // 
             this.buttonXoaHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonXoaHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonXoaHD.Location = new System.Drawing.Point(360, 179);
+            this.buttonXoaHD.Location = new System.Drawing.Point(361, 146);
             this.buttonXoaHD.Name = "buttonXoaHD";
             this.buttonXoaHD.Size = new System.Drawing.Size(116, 58);
             this.buttonXoaHD.TabIndex = 4;
@@ -97,7 +97,7 @@
             // 
             this.buttonXemChiTietHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonXemChiTietHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonXemChiTietHD.Location = new System.Drawing.Point(516, 179);
+            this.buttonXemChiTietHD.Location = new System.Drawing.Point(517, 146);
             this.buttonXemChiTietHD.Name = "buttonXemChiTietHD";
             this.buttonXemChiTietHD.Size = new System.Drawing.Size(226, 58);
             this.buttonXemChiTietHD.TabIndex = 5;
@@ -108,7 +108,7 @@
             // 
             this.buttonLamMoiHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonLamMoiHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonLamMoiHD.Location = new System.Drawing.Point(783, 179);
+            this.buttonLamMoiHD.Location = new System.Drawing.Point(784, 146);
             this.buttonLamMoiHD.Name = "buttonLamMoiHD";
             this.buttonLamMoiHD.Size = new System.Drawing.Size(183, 58);
             this.buttonLamMoiHD.TabIndex = 6;
