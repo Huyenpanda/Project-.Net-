@@ -5,13 +5,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using QLVPP_Project.GUI.Staff;
+using System.Drawing;
 
 namespace QLVPP_Project
 {
     public partial class UserControl_BodyQLSP : UserControl
     {
         ProductDao productDao = new ProductDao();
-
+        bool isChecked = false;
         public UserControl_BodyQLSP()
         {
             InitializeComponent();
@@ -60,9 +61,23 @@ namespace QLVPP_Project
                 MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void InitializeControls()
+        { // Initially enable all controls
+          EnableAllControls(); SetForeColor(); 
+        }
+        private void EnableAllControls()
+        {
+            labelTenSP.Enabled = true; 
+            textBoxTenSP.Enabled = true; 
+            labelMaSP.Enabled = true; 
+            textBoxMaSP.Enabled = true; 
+            labelGiaTu.Enabled = true; 
+            textBoxGiaTu.Enabled = true; 
+            labelGiaDen.Enabled = true; 
+            textBoxGiaDen.Enabled = true;
+        }
 
-       
-        private void buttonThem_Click(object sender, EventArgs e)
+            private void buttonThem_Click(object sender, EventArgs e)
         {
             // Hiển thị FormThemSP với thông tin sản phẩm cần sửa
             FormThemSP formThemSP = new FormThemSP();
@@ -133,25 +148,144 @@ namespace QLVPP_Project
                 MessageBox.Show("Vui lòng chọn một hàng để xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        private void textBoxTimKiem_TextChanged(object sender, EventArgs e)
+        private void buttonTimKiem_Click(object sender, EventArgs e)
         {
+            string productName = textBoxTenSP.Text.Trim(); 
+            int.TryParse(textBoxMaSP.Text.Trim(), out int productId); 
+            double.TryParse(textBoxGiaTu.Text, out double fromPrice); 
+            double.TryParse(textBoxGiaDen.Text, out double toPrice); 
+            DataTable searchResult = ProductDao.Instance.searchByCriteria(productName, productId, fromPrice, toPrice); 
+            dataGridViewQLSP.DataSource = searchResult;
+            
+            if (radioButtonTheoGia.Checked)
+            {
+                // Validate price inputs
+                if (double.TryParse(textBoxGiaTu.Text, out  fromPrice) &&
+                    double.TryParse(textBoxGiaDen.Text, out  toPrice))
+                {
+                    if (fromPrice >= 0 && toPrice >= fromPrice)
+                    {
+                        // Search by price range
+                         searchResult = ProductDao.Instance.searchByNameAndPrice(null, fromPrice, toPrice);
+                        dataGridViewQLSP.DataSource = searchResult;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Giá từ phải nhỏ hơn hoặc bằng giá đến.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập giá trị hợp lệ cho khoảng giá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (radioButtonTheoTen.Checked)
+            {
+                productName = textBoxTenSP.Text.Trim();
+                if (!string.IsNullOrEmpty(productName))
+                {
+                    searchResult = ProductDao.Instance.searchByNameAndPrice(productName, 0, 0); 
+                    dataGridViewQLSP.DataSource = searchResult;
+                }
+                else { 
+                    MessageBox.Show("Vui lòng nhập tên sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                }
+            } else
+            {
 
+            }    
         }
 
-        private void buttonTim_Click(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void UserControl_BodyQLSP_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
+
+        private void radioButtonTatCa_CheckedChanged(object sender, EventArgs e)
         {
+            EnableAllControls();
+            SetForeColor();
+            LoadData();
+        }
+        private void radioButtonTheoTen_CheckedChanged_1(object sender, EventArgs e)
+        {
+            isChecked = radioButtonTheoTen.Checked;
+
+            // Enable/Disable controls based on the radio button state
+            labelTenSP.Enabled = isChecked;
+            textBoxTenSP.Enabled = isChecked;
+            labelMaSP.Enabled = !isChecked;
+            textBoxMaSP.Enabled = !isChecked;
+
+            labelGiaTu.Enabled = !isChecked;
+            textBoxGiaTu.Enabled = !isChecked;
+            labelGiaDen.Enabled = !isChecked;
+            textBoxGiaDen.Enabled = !isChecked;
+
+            SetForeColor();
+        }
+
+        private void radioButtonTheoGia_CheckedChanged(object sender, EventArgs e)
+        {
+            isChecked = radioButtonTheoGia.Checked;
+
+            // Enable/Disable controls based on the radio button state
+            labelTenSP.Enabled = !isChecked;
+            textBoxTenSP.Enabled = !isChecked;
+            labelMaSP.Enabled = !isChecked;
+            textBoxMaSP.Enabled = !isChecked;
+
+            labelGiaTu.Enabled = isChecked;
+            textBoxGiaTu.Enabled = isChecked;
+            labelGiaDen.Enabled = isChecked;
+            textBoxGiaDen.Enabled = isChecked;
+
+            SetForeColor();
+        }
+
+        private void radioButtonTheoMa_CheckedChanged(object sender, EventArgs e)
+        {
+            isChecked = radioButtonTheoMa.Checked;
+
+            // Enable/Disable controls based on the radio button state
+            labelTenSP.Enabled = !isChecked;
+            textBoxTenSP.Enabled = !isChecked;
+            labelMaSP.Enabled = isChecked;
+            textBoxMaSP.Enabled = isChecked;
+
+            labelGiaTu.Enabled = !isChecked;
+            textBoxGiaTu.Enabled = !isChecked;
+            labelGiaDen.Enabled = !isChecked;
+            textBoxGiaDen.Enabled = !isChecked;
+
+            SetForeColor();
+        }
+
+        private void radioButtonLoc_CheckedChanged(object sender, EventArgs e)
+        {
+            isChecked = radioButtonLoc.Checked;
+            EnableAllControls();
+            SetForeColor();
 
         }
+
+        private void SetForeColor()
+        {
+            // Set text color based on the enabled state of the controls
+            labelTenSP.ForeColor = textBoxTenSP.Enabled ? Color.Black : Color.Gray;
+            textBoxTenSP.ForeColor = textBoxTenSP.Enabled ? Color.Black : Color.Gray;
+            labelMaSP.ForeColor = textBoxMaSP.Enabled ? Color.Black : Color.Gray;
+            textBoxMaSP.ForeColor = textBoxMaSP.Enabled ? Color.Black : Color.Gray;
+            labelGiaTu.ForeColor = textBoxGiaTu.Enabled ? Color.Black : Color.Gray;
+            textBoxGiaTu.ForeColor = textBoxGiaTu.Enabled ? Color.Black : Color.Gray;
+            labelGiaDen.ForeColor = textBoxGiaDen.Enabled ? Color.Black : Color.Gray;
+            textBoxGiaDen.ForeColor = textBoxGiaDen.Enabled ? Color.Black : Color.Gray;
+        }
+
+
     }
 }

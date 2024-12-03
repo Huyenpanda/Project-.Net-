@@ -33,5 +33,10 @@ namespace QLVPP_Project
         {
             Application.Exit();
         }
+
+        private void buttonQLDH_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

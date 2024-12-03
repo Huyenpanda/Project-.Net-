@@ -11,7 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -32,17 +32,17 @@
             this.buttonThem = new System.Windows.Forms.Button();
             this.buttonSua = new System.Windows.Forms.Button();
             this.buttonXoa = new System.Windows.Forms.Button();
-            this.labelTenOrMa = new System.Windows.Forms.Label();
+            this.labelTenSP = new System.Windows.Forms.Label();
             this.buttonTimKiem = new System.Windows.Forms.Button();
             this.textBoxTenSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewQLSP = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelGiaTu = new System.Windows.Forms.Label();
             this.textBoxGiaTu = new System.Windows.Forms.TextBox();
             this.textBoxGiaDen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelGiaDen = new System.Windows.Forms.Label();
             this.textBoxMaSP = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelMaSP = new System.Windows.Forms.Label();
             this.radioButtonTheoTen = new System.Windows.Forms.RadioButton();
             this.radioButtonTheoMa = new System.Windows.Forms.RadioButton();
             this.radioButtonTheoGia = new System.Windows.Forms.RadioButton();
@@ -87,15 +87,15 @@
             this.buttonXoa.UseVisualStyleBackColor = true;
             this.buttonXoa.Click += new System.EventHandler(this.buttonXoa_Click);
             // 
-            // labelTenOrMa
+            // labelTenSP
             // 
-            this.labelTenOrMa.AutoSize = true;
-            this.labelTenOrMa.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTenOrMa.Location = new System.Drawing.Point(324, 80);
-            this.labelTenOrMa.Name = "labelTenOrMa";
-            this.labelTenOrMa.Size = new System.Drawing.Size(175, 31);
-            this.labelTenOrMa.TabIndex = 3;
-            this.labelTenOrMa.Text = "Tên Sản Phẩm :";
+            this.labelTenSP.AutoSize = true;
+            this.labelTenSP.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenSP.Location = new System.Drawing.Point(324, 80);
+            this.labelTenSP.Name = "labelTenSP";
+            this.labelTenSP.Size = new System.Drawing.Size(175, 31);
+            this.labelTenSP.TabIndex = 3;
+            this.labelTenSP.Text = "Tên Sản Phẩm :";
             // 
             // buttonTimKiem
             // 
@@ -107,7 +107,7 @@
             this.buttonTimKiem.TabIndex = 4;
             this.buttonTimKiem.Text = "Tìm kiếm";
             this.buttonTimKiem.UseVisualStyleBackColor = true;
-            this.buttonTimKiem.Click += new System.EventHandler(this.buttonTim_Click);
+            this.buttonTimKiem.Click += new System.EventHandler(this.buttonTimKiem_Click);
             // 
             // textBoxTenSP
             // 
@@ -116,7 +116,6 @@
             this.textBoxTenSP.Name = "textBoxTenSP";
             this.textBoxTenSP.Size = new System.Drawing.Size(416, 36);
             this.textBoxTenSP.TabIndex = 5;
-            this.textBoxTenSP.TextChanged += new System.EventHandler(this.textBoxTimKiem_TextChanged);
             // 
             // label1
             // 
@@ -144,15 +143,15 @@
             this.dataGridViewQLSP.Size = new System.Drawing.Size(993, 571);
             this.dataGridViewQLSP.TabIndex = 7;
             // 
-            // label2
+            // labelGiaTu
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(414, 218);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 31);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Giá từ:";
+            this.labelGiaTu.AutoSize = true;
+            this.labelGiaTu.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGiaTu.Location = new System.Drawing.Point(414, 218);
+            this.labelGiaTu.Name = "labelGiaTu";
+            this.labelGiaTu.Size = new System.Drawing.Size(85, 31);
+            this.labelGiaTu.TabIndex = 8;
+            this.labelGiaTu.Text = "Giá từ:";
             // 
             // textBoxGiaTu
             // 
@@ -170,16 +169,15 @@
             this.textBoxGiaDen.Size = new System.Drawing.Size(126, 36);
             this.textBoxGiaDen.TabIndex = 12;
             // 
-            // label3
+            // labelGiaDen
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(674, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 31);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Giá đến:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.labelGiaDen.AutoSize = true;
+            this.labelGiaDen.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGiaDen.Location = new System.Drawing.Point(674, 218);
+            this.labelGiaDen.Name = "labelGiaDen";
+            this.labelGiaDen.Size = new System.Drawing.Size(102, 31);
+            this.labelGiaDen.TabIndex = 11;
+            this.labelGiaDen.Text = "Giá đến:";
             // 
             // textBoxMaSP
             // 
@@ -189,15 +187,15 @@
             this.textBoxMaSP.Size = new System.Drawing.Size(416, 36);
             this.textBoxMaSP.TabIndex = 14;
             // 
-            // label4
+            // labelMaSP
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(333, 149);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 31);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Mã Sản Phẩm:";
+            this.labelMaSP.AutoSize = true;
+            this.labelMaSP.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaSP.Location = new System.Drawing.Point(333, 149);
+            this.labelMaSP.Name = "labelMaSP";
+            this.labelMaSP.Size = new System.Drawing.Size(166, 31);
+            this.labelMaSP.TabIndex = 13;
+            this.labelMaSP.Text = "Mã Sản Phẩm:";
             // 
             // radioButtonTheoTen
             // 
@@ -211,6 +209,7 @@
             this.radioButtonTheoTen.TabStop = true;
             this.radioButtonTheoTen.Text = "Theo Tên";
             this.radioButtonTheoTen.UseVisualStyleBackColor = true;
+            this.radioButtonTheoTen.CheckedChanged += new System.EventHandler(this.radioButtonTheoTen_CheckedChanged_1);
             // 
             // radioButtonTheoMa
             // 
@@ -224,6 +223,7 @@
             this.radioButtonTheoMa.TabStop = true;
             this.radioButtonTheoMa.Text = "Theo Mã";
             this.radioButtonTheoMa.UseVisualStyleBackColor = true;
+            this.radioButtonTheoMa.CheckedChanged += new System.EventHandler(this.radioButtonTheoMa_CheckedChanged);
             // 
             // radioButtonTheoGia
             // 
@@ -237,6 +237,7 @@
             this.radioButtonTheoGia.TabStop = true;
             this.radioButtonTheoGia.Text = "Theo Giá";
             this.radioButtonTheoGia.UseVisualStyleBackColor = true;
+            this.radioButtonTheoGia.CheckedChanged += new System.EventHandler(this.radioButtonTheoGia_CheckedChanged);
             // 
             // radioButtonLoc
             // 
@@ -250,6 +251,7 @@
             this.radioButtonLoc.TabStop = true;
             this.radioButtonLoc.Text = "Lọc";
             this.radioButtonLoc.UseVisualStyleBackColor = true;
+            this.radioButtonLoc.CheckedChanged += new System.EventHandler(this.radioButtonLoc_CheckedChanged);
             // 
             // radioButtonTatCa
             // 
@@ -263,6 +265,7 @@
             this.radioButtonTatCa.TabStop = true;
             this.radioButtonTatCa.Text = "Tất cả";
             this.radioButtonTatCa.UseVisualStyleBackColor = true;
+            this.radioButtonTatCa.CheckedChanged += new System.EventHandler(this.radioButtonTatCa_CheckedChanged);
             // 
             // UserControl_BodyQLSP
             // 
@@ -275,16 +278,16 @@
             this.Controls.Add(this.radioButtonTheoMa);
             this.Controls.Add(this.radioButtonTheoTen);
             this.Controls.Add(this.textBoxMaSP);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelMaSP);
             this.Controls.Add(this.textBoxGiaDen);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelGiaDen);
             this.Controls.Add(this.textBoxGiaTu);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelGiaTu);
             this.Controls.Add(this.dataGridViewQLSP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxTenSP);
             this.Controls.Add(this.buttonTimKiem);
-            this.Controls.Add(this.labelTenOrMa);
+            this.Controls.Add(this.labelTenSP);
             this.Controls.Add(this.buttonXoa);
             this.Controls.Add(this.buttonSua);
             this.Controls.Add(this.buttonThem);
@@ -303,17 +306,17 @@
         private System.Windows.Forms.Button buttonThem;
         private System.Windows.Forms.Button buttonSua;
         private System.Windows.Forms.Button buttonXoa;
-        private System.Windows.Forms.Label labelTenOrMa;
+        private System.Windows.Forms.Label labelTenSP;
         private System.Windows.Forms.Button buttonTimKiem;
         private System.Windows.Forms.TextBox textBoxTenSP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewQLSP;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelGiaTu;
         private System.Windows.Forms.TextBox textBoxGiaTu;
         private System.Windows.Forms.TextBox textBoxGiaDen;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelGiaDen;
         private System.Windows.Forms.TextBox textBoxMaSP;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelMaSP;
         private System.Windows.Forms.RadioButton radioButtonTheoTen;
         private System.Windows.Forms.RadioButton radioButtonTheoMa;
         private System.Windows.Forms.RadioButton radioButtonTheoGia;

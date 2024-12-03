@@ -132,6 +132,12 @@
     <Compile Include="GUI\Staff\UserControlThemSanPham.Designer.cs">
       <DependentUpon>UserControlThemSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Staff\UserControl_BodyQLDH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff\UserControl_BodyQLDH.Designer.cs">
+      <DependentUpon>UserControl_BodyQLDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Cypher.cs" />
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Staff\UserControlThemSanPham.resx">
       <DependentUpon>UserControlThemSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff\UserControl_BodyQLDH.resx">
+      <DependentUpon>UserControl_BodyQLDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

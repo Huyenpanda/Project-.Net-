@@ -201,6 +201,52 @@ namespace QLVPP_Project.Dao
 
             return dt;
         }
+        public DataTable searchByCriteria(string productName, int productId, double fromPrice, double toPrice)
+        {
+            string query = "SELECT * FROM Product WHERE 1=1";
+            if (!string.IsNullOrEmpty(productName))
+            {
+                query += " AND ProductName LIKE @ProductName";
+            }
+            if (productId > 0)
+            {
+                query += " AND ProductId = @ProductId";
+            }
+            if (fromPrice > 0)
+            {
+                query += " AND Price >= @FromPrice";
+            }
+            if (toPrice > 0 && toPrice > fromPrice)
+            {
+                query += " AND Price <= @ToPrice";
+            }
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                if (!string.IsNullOrEmpty(productName))
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@ProductName", "%" + productName + "%");
+                }
+                if (productId > 0)
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@ProductId", productId);
+                }
+                if (fromPrice > 0)
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@FromPrice", fromPrice);
+                }
+                if (toPrice > 0 && toPrice > fromPrice)
+                {
+                    adapter.SelectCommand.Parameters.AddWithValue("@ToPrice", toPrice);
+                }
+                conn.Open();
+                adapter.Fill(dt);
+            }
+
+            return dt;
+        }
 
 
         public Product getById(int id)

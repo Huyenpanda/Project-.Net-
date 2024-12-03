@@ -13,7 +13,7 @@ namespace QLVPP_Project
         {
             this.panel_SideBar = new System.Windows.Forms.Panel();
             this.buttonThoat = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonQLDH = new System.Windows.Forms.Button();
             this.button_QuanLySanPham = new System.Windows.Forms.Button();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_SideBar.SuspendLayout();
@@ -24,7 +24,7 @@ namespace QLVPP_Project
             // 
             this.panel_SideBar.BackColor = System.Drawing.Color.Maroon;
             this.panel_SideBar.Controls.Add(this.buttonThoat);
-            this.panel_SideBar.Controls.Add(this.button2);
+            this.panel_SideBar.Controls.Add(this.buttonQLDH);
             this.panel_SideBar.Controls.Add(this.button_QuanLySanPham);
             this.panel_SideBar.Controls.Add(this.pictureBox_logo);
             this.panel_SideBar.Location = new System.Drawing.Point(0, 0);
@@ -44,18 +44,19 @@ namespace QLVPP_Project
             this.buttonThoat.UseVisualStyleBackColor = true;
             this.buttonThoat.Click += new System.EventHandler(this.buttonThoat_Click);
             // 
-            // button2
+            // buttonQLDH
             // 
-            this.button2.BackgroundImage = global::QLVPP_Project.Properties.Resources.MaroonCloud_background;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(194)))));
-            this.button2.Location = new System.Drawing.Point(-32, 347);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(364, 100);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Quản Lý Đơn Hàng";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonQLDH.BackgroundImage = global::QLVPP_Project.Properties.Resources.MaroonCloud_background;
+            this.buttonQLDH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonQLDH.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
+            this.buttonQLDH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(194)))));
+            this.buttonQLDH.Location = new System.Drawing.Point(-32, 347);
+            this.buttonQLDH.Name = "buttonQLDH";
+            this.buttonQLDH.Size = new System.Drawing.Size(364, 100);
+            this.buttonQLDH.TabIndex = 4;
+            this.buttonQLDH.Text = "Quản Lý Đơn Hàng";
+            this.buttonQLDH.UseVisualStyleBackColor = true;
+            this.buttonQLDH.Click += new System.EventHandler(this.buttonQLDH_Click);
             // 
             // button_QuanLySanPham
             // 
@@ -91,7 +92,7 @@ namespace QLVPP_Project
             this.ResumeLayout(false);
 
         }
-        private Button button2;
+        private Button buttonQLDH;
         private Button buttonThoat;
     }
 }

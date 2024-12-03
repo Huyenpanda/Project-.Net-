@@ -80,7 +80,7 @@ namespace QLVPP_Project
             tableLayoutPanel.Controls.Add(headerQLSP, 0, 0);
 
             // Thêm UserControl_BodyQLSP vào TableLayoutPanel
-            UserControl_BodyQLSP bodyQLSP = new UserControl_BodyQLSP();
+            UserControl_BodyQLDH bodyQLSP = new UserControl_BodyQLSP();
             bodyQLSP.Dock = DockStyle.Fill;
             tableLayoutPanel.Controls.Add(bodyQLSP, 0, 1);
 
@@ -91,9 +91,6 @@ namespace QLVPP_Project
             this.Controls.Add(splitContainer);
         }
        
-
-
-
     }
 
 }
