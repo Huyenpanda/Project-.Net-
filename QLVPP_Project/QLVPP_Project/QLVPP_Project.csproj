@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="Dao\AccountDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
     <Compile Include="GUI\Staff\FormQuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>

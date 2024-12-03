@@ -13,10 +13,9 @@ namespace QLVPP_Project
             InitializeComponent();
         }
 
-
         private void buttonQuanLySanPham_Click(object sender, EventArgs e)
         {
-            if (FormQuanLySanPham.IsFormOpen)
+            /*if (FormQuanLySanPham.IsFormOpen)
             {
                 // Nếu form đã mở, đưa form lên phía trước
                 FormQuanLySanPham.Instance.BringToFront();
@@ -26,6 +25,16 @@ namespace QLVPP_Project
                 // Nếu chưa mở, tạo và hiển thị form mới
                 FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
                 formQuanLySanPham.Show();
+            }*/
+            if (FormQuanLySanPham.IsFormOpen)
+            {
+                FormQuanLySanPham.Instance.ChangeBody(new UserControl_BodyQLSP());
+            }
+            else
+            {
+                FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
+                formQuanLySanPham.Show();
+                formQuanLySanPham.ChangeBody(new UserControl_BodyQLSP());
             }
         }
 
@@ -36,7 +45,17 @@ namespace QLVPP_Project
 
         private void buttonQLDH_Click(object sender, EventArgs e)
         {
-
+            if (FormQuanLySanPham.IsFormOpen)
+            {
+                FormQuanLySanPham.Instance.ChangeBody(new UserControl_BodyQLDH());
+            }
+            else
+            {
+                FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
+                formQuanLySanPham.Show();
+                formQuanLySanPham.ChangeBody(new UserControl_BodyQLDH());
+            }
+            
         }
     }
 }

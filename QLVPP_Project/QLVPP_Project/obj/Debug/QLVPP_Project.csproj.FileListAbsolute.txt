@@ -73,3 +73,4 @@ C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.Fo
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.admin.FrmTrangChu.resources
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Pr.657E7CC0.Up2Date
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormThemSP.resources
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_BodyQLDH.resources

@@ -1,18 +1,13 @@
-﻿using QLVPP_Project.Dao;
-using QLVPP_Project.Model;
-using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System;
 using System.Windows.Forms;
-using QLVPP_Project.GUI.Staff;
-using System.Drawing;
+using QLVPP_Project.Dao;
 
 namespace QLVPP_Project
 {
     public partial class UserControl_BodyQLDH : UserControl
     {
-        ProductDao productDao = new ProductDao();
-        
+        OrderDao orderDao = new OrderDao();
+
         public UserControl_BodyQLDH()
         {
             InitializeComponent();
@@ -23,44 +18,44 @@ namespace QLVPP_Project
         {
             try
             {
+                dataGridViewQLDH.DataSource = OrderDao.Instance.getAll();
 
-
-                dataGridViewQLSP.DataSource = ProductDao.Instance.getAllAndCategoryName();
-                //dataGridViewQLSP.DataSource = productTable;
                 // Cấu hình hiển thị cho các cột
-                dataGridViewQLSP.Columns["ProductId"].HeaderText = "ProductId";
-                dataGridViewQLSP.Columns["ProductName"].HeaderText = "ProductName";
-                dataGridViewQLSP.Columns["Price"].HeaderText = "Price";
-                dataGridViewQLSP.Columns["Unit"].HeaderText = "Unit";
-                dataGridViewQLSP.Columns["CategoryName"].HeaderText = "CategoryName";
-                dataGridViewQLSP.Columns["Description"].HeaderText = "Description";
+                dataGridViewQLDH.Columns["OrderId"].HeaderText = "OrderId";
+                dataGridViewQLDH.Columns["CreateDate"].HeaderText = "CreateDate";
+                dataGridViewQLDH.Columns["Username"].HeaderText = "Username";
+                dataGridViewQLDH.Columns["Status"].HeaderText = "Status";
+                dataGridViewQLDH.Columns["Total"].HeaderText = "Total";
 
                 // Đặt kích thước cho các cột
-                dataGridViewQLSP.Columns["ProductId"].Width = 80;
-                dataGridViewQLSP.Columns["ProductName"].Width = 150;
-                dataGridViewQLSP.Columns["Price"].Width = 50;
-                dataGridViewQLSP.Columns["Unit"].Width = 100;
-                dataGridViewQLSP.Columns["CategoryName"].Width = 150;
-                dataGridViewQLSP.Columns["Description"].Width = 250;
+                dataGridViewQLDH.Columns["OrderId"].Width = 80;
+                dataGridViewQLDH.Columns["CreateDate"].Width = 150;
+                dataGridViewQLDH.Columns["Username"].Width = 150;
+                dataGridViewQLDH.Columns["Status"].Width = 80;
+                dataGridViewQLDH.Columns["Total"].Width = 100;
+
                 // Căn giữa tên các cột
-                foreach (DataGridViewColumn column in dataGridViewQLSP.Columns)
+                foreach (DataGridViewColumn column in dataGridViewQLDH.Columns)
                 {
                     column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 }
 
-                // Căn giữa nội dung các cột Giá, Đơn Vị và Loại Sản Phẩm
-                dataGridViewQLSP.Columns["ProductId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewQLSP.Columns["Price"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewQLSP.Columns["Unit"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                /*dataGridViewQLSP.Columns["CategoryName"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;*/
-
+                // Căn giữa nội dung các cột
+                dataGridViewQLDH.Columns["OrderId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewQLDH.Columns["CreateDate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewQLDH.Columns["Username"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewQLDH.Columns["Status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dataGridViewQLDH.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
-                string errorMessage = $"Error in {nameof(ProductDao)}.{nameof(ProductDao.getAll)}: {ex.Message}\nStack Trace:\n{ex.StackTrace}";
-                MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error loading data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-     
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

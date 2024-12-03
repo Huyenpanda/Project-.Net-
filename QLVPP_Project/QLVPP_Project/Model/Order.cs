@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLVPP_Project.Model
 {
@@ -33,7 +29,7 @@ namespace QLVPP_Project.Model
 
         public int OrderId
         {
-            get { return orderId; } 
+            get { return orderId; }
             set { orderId = value; }
         }
         public int AccountId
@@ -56,6 +52,5 @@ namespace QLVPP_Project.Model
             get { return paymentId; }
             set { paymentId = value; }
         }
-
     }
 }

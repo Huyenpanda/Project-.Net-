@@ -16,6 +16,9 @@ namespace QLVPP_Project
     {
         public static bool IsFormOpen { get; private set; } = false;
         public static FormQuanLySanPham Instance { get; private set; }
+        private UserControl currentControl;
+        private TableLayoutPanel tableLayoutPanel;  // Đảm bảo khai báo TableLayoutPanel ở mức class
+
         public FormQuanLySanPham()
         {
             InitializeComponent();
@@ -67,7 +70,7 @@ namespace QLVPP_Project
             splitContainer.Panel1.Controls.Add(sideBar);
 
             // Tạo TableLayoutPanel cho vùng Header và Body
-            TableLayoutPanel tableLayoutPanel = new TableLayoutPanel();
+            tableLayoutPanel = new TableLayoutPanel();
             tableLayoutPanel.Dock = DockStyle.Fill;
             tableLayoutPanel.RowCount = 2;
             tableLayoutPanel.ColumnCount = 1;
@@ -80,9 +83,12 @@ namespace QLVPP_Project
             tableLayoutPanel.Controls.Add(headerQLSP, 0, 0);
 
             // Thêm UserControl_BodyQLSP vào TableLayoutPanel
-            UserControl_BodyQLDH bodyQLSP = new UserControl_BodyQLSP();
+            UserControl_BodyQLSP bodyQLSP = new UserControl_BodyQLSP();
             bodyQLSP.Dock = DockStyle.Fill;
             tableLayoutPanel.Controls.Add(bodyQLSP, 0, 1);
+
+            // Lưu lại UserControl hiện tại
+            currentControl = bodyQLSP;
 
             // Thêm TableLayoutPanel vào Panel2 của SplitContainer
             splitContainer.Panel2.Controls.Add(tableLayoutPanel);
@@ -90,7 +96,16 @@ namespace QLVPP_Project
             // Thêm SplitContainer vào Form
             this.Controls.Add(splitContainer);
         }
-       
-    }
 
+        public void ChangeBody(UserControl newControl)
+        {
+            if (currentControl != null)
+            {
+                tableLayoutPanel.Controls.Remove(currentControl);
+            }
+            currentControl = newControl;
+            newControl.Dock = DockStyle.Fill;
+            tableLayoutPanel.Controls.Add(newControl, 0, 1);
+        }
+    }
 }
