@@ -64,32 +64,11 @@ namespace QLVPP_Project
         }
         private void buttonSuaHD_Click(object sender, EventArgs e)
         {
-            if (dataGridViewQLDH.SelectedRows.Count > 0)
-            {
-                // Lấy OrderId từ hàng được chọn
-                int selectedOrderId = Convert.ToInt32(dataGridViewQLDH.SelectedRows[0].Cells["OrderId"].Value);
-
-                // Tạo instance của FormCapNhatHoaDon
-                FormCapNhatHoaDon formCapNhatHoaDon = new FormCapNhatHoaDon();
-
-                // Truyền OrderId vào form để load dữ liệu
-                formCapNhatHoaDon.LoadOrderData(selectedOrderId);
-
-                // Thay đổi label thành "Sửa Thông Tin Hóa Đơn"
-                formCapNhatHoaDon.SetLabelTitle("Sửa Thông Tin Hóa Đơn");
-
-                // Hiển thị form
-                formCapNhatHoaDon.ShowDialog();
-
-                // Tải lại dữ liệu sau khi sửa
-                LoadData();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn một hóa đơn để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            // Hiển thị FormThemSP với thông tin sản phẩm cần sửa
+            FormCapNhatHoaDon formCapNhatHoaDon = new FormCapNhatHoaDon();
+            formCapNhatHoaDon.ShowDialog();
+            LoadData(); // Tải lại dữ liệu sau khi chỉnh sửa
         }
-
 
         private void buttonXoaHD_Click(object sender, EventArgs e)
         {
