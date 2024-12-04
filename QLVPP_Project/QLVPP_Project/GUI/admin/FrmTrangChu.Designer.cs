@@ -30,12 +30,12 @@ namespace QLVPP_Project.GUI.admin
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTrangChu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea25 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend25 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend26 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel_SideBar = new System.Windows.Forms.Panel();
             this.btnBCTK = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -926,16 +926,16 @@ namespace QLVPP_Project.GUI.admin
             // 
             this.chartTopSaleProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.chartTopSaleProduct.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea25.Name = "ChartArea1";
-            this.chartTopSaleProduct.ChartAreas.Add(chartArea25);
-            legend25.Name = "Legend1";
-            this.chartTopSaleProduct.Legends.Add(legend25);
+            chartArea1.Name = "ChartArea1";
+            this.chartTopSaleProduct.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartTopSaleProduct.Legends.Add(legend1);
             this.chartTopSaleProduct.Location = new System.Drawing.Point(732, 324);
             this.chartTopSaleProduct.Name = "chartTopSaleProduct";
-            series25.ChartArea = "ChartArea1";
-            series25.Legend = "Legend1";
-            series25.Name = "Series1";
-            this.chartTopSaleProduct.Series.Add(series25);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartTopSaleProduct.Series.Add(series1);
             this.chartTopSaleProduct.Size = new System.Drawing.Size(631, 525);
             this.chartTopSaleProduct.TabIndex = 2;
             this.chartTopSaleProduct.Text = "chart1";
@@ -955,16 +955,16 @@ namespace QLVPP_Project.GUI.admin
             // 
             this.chartRevenueByMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.chartRevenueByMonth.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea26.Name = "ChartArea1";
-            this.chartRevenueByMonth.ChartAreas.Add(chartArea26);
-            legend26.Name = "Legend1";
-            this.chartRevenueByMonth.Legends.Add(legend26);
+            chartArea2.Name = "ChartArea1";
+            this.chartRevenueByMonth.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartRevenueByMonth.Legends.Add(legend2);
             this.chartRevenueByMonth.Location = new System.Drawing.Point(28, 30);
             this.chartRevenueByMonth.Name = "chartRevenueByMonth";
-            series26.ChartArea = "ChartArea1";
-            series26.Legend = "Legend1";
-            series26.Name = "Series1";
-            this.chartRevenueByMonth.Series.Add(series26);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartRevenueByMonth.Series.Add(series2);
             this.chartRevenueByMonth.Size = new System.Drawing.Size(650, 549);
             this.chartRevenueByMonth.TabIndex = 0;
             this.chartRevenueByMonth.Text = "chart1";
@@ -975,9 +975,9 @@ namespace QLVPP_Project.GUI.admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1695, 1021);
-            this.Controls.Add(this.panelQLSP);
-            this.Controls.Add(this.panelBCTK);
             this.Controls.Add(this.panelQLTK);
+            this.Controls.Add(this.panelBCTK);
+            this.Controls.Add(this.panelQLSP);
             this.Controls.Add(this.panel_Header);
             this.Controls.Add(this.panel_SideBar);
             this.Margin = new System.Windows.Forms.Padding(4);

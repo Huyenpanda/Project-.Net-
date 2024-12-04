@@ -1,4 +1,5 @@
 ﻿using QLVPP_Project.GUI.admin;
+using QLVPP_Project.GUI.Staff;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,10 @@ namespace QLVPP_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FormQuanLySanPham());
-            Application.Run(new FrmLogin());
+            Application.Run(new FormQuanLySanPham());
+            //Application.Run(new FrmLogin());
             //Application.Run(new FrmTrangChu());
+            //Application.Run(new FormCapNhatHoaDon());
         }
     }
 }

@@ -14,7 +14,13 @@ namespace QLVPP_Project.Model
         private double total;
         private int orderId;
         private bool status;
-
+        public OrderDetail() { }
+        public OrderDetail(int orderId, int productId, int quantity, double total) {
+            OrderId = orderId; 
+            ProductId = productId; 
+            Quantity = quantity; 
+            Total = total; 
+        }
         public OrderDetail(int orderDetailId, int productId, int quantity, double total, int orderId, bool status)
         {
             this.orderDetailId = orderDetailId;
@@ -65,8 +71,6 @@ namespace QLVPP_Project.Model
             get { return status; }
             set { status = value; }
         }
-
-
 
     }
 }

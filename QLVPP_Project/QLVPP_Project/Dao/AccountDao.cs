@@ -14,6 +14,13 @@ namespace QLVPP_Project.Dao
     {
         string connectString = ConnectionManager.getConnectString();
 
+        private static AccountDao instance;
+
+        public static AccountDao Instance
+        {
+            get { if (instance == null) instance = new AccountDao(); return AccountDao.instance; }
+            private set { AccountDao.instance = value; }
+        }
         public DataTable getAll()
         {
             DataTable data = new DataTable();
@@ -30,10 +37,78 @@ namespace QLVPP_Project.Dao
         }
 
 
+        public bool Insert(Account acc)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "INSERT INTO Account (AccountName, Role, Username, Password, Email, Phone) " +
+                                 "VALUES (@AccName, @Role, @Username, @Password, @Email, @Phone)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@AccName", acc.AccountName);
+                    cmd.Parameters.AddWithValue("@Role", acc.Role);
+                    cmd.Parameters.AddWithValue("@Username", acc.UserName);
+                    cmd.Parameters.AddWithValue("@Password", acc.PassWord);
+                    cmd.Parameters.AddWithValue("@Email", acc.Email);
+                    cmd.Parameters.AddWithValue("@Phone", acc.Phone);
 
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erorr AccountDao: {ex.Message}");
+                    return false;
+                }
+            }
+        }
 
+        public bool Delete(int accId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "DELETE FROM Account WHERE AccountId = @AccId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@AccId", accId);
 
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error AccountDao: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+        public bool UpdateContactInfo(int accountId, string phone, string email)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "UPDATE Account SET Phone = @Phone, Email = @Email WHERE AccountId = @AccountId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@Phone", phone);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@AccountId", accountId);
 
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error AccountDao.UpdateContactInfo: {ex.Message}");
+                    return false;
+                }
+            }
+        }
 
         public bool checkLogin(string username,string pass)
         {
@@ -120,56 +195,6 @@ namespace QLVPP_Project.Dao
         }
 
 
-        public bool Insert(Account acc)
-        {
-            using (SqlConnection conn = new SqlConnection(connectString))
-            {
-                try
-                {
-                    conn.Open();
-                    string sql = "INSERT INTO Account (AccountName, Role, Username, Password, Email, Phone) " +
-                                 "VALUES (@AccName, @Role, @Username, @Password, @Email, @Phone)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@AccName", acc.AccountName);
-                    cmd.Parameters.AddWithValue("@Role", acc.Role);
-                    cmd.Parameters.AddWithValue("@Username", acc.UserName);
-                    cmd.Parameters.AddWithValue("@Password", acc.PassWord);
-                    cmd.Parameters.AddWithValue("@Email", acc.Email);
-                    cmd.Parameters.AddWithValue("@Phone", acc.Phone);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Erorr AccountDao: {ex.Message}");
-                    return false;
-                }
-            }
-        }
-
-        public bool Delete(int accId) 
-        {
-            using (SqlConnection conn = new SqlConnection(connectString))
-            {
-                try
-                {
-                    conn.Open();
-                    string sql = "DELETE FROM Account WHERE AccountId = @AccId";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@AccId", accId);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error AccountDao: {ex.Message}");
-                    return false;
-                }
-            }
-        }
-
         public DataTable searchByRoleOrAccountName(string role,string accName)
         {
             DataTable data = new DataTable();
@@ -217,7 +242,27 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
-        
+        public int GetAccountIdByName(string accountName)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = "SELECT AccountId FROM Account WHERE AccountName = @AccountName";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@AccountName", accountName);
+                object result = cmd.ExecuteScalar();
+                conn.Close();
+
+                if (result != null)
+                {
+                    return Convert.ToInt32(result);
+                }
+                return -1; // Không tìm thấy tài khoản
+            }
+        }
+
+
+
 
 
     }

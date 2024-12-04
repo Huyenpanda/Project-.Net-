@@ -9,7 +9,7 @@ namespace QLVPP_Project.Model
         private DateTime createDate;
         private double total;
         private int paymentId;
-
+        public Order() { }
         public Order(int orderId, int accountId, DateTime createDate, double total, int paymentId)
         {
             this.orderId = orderId;
@@ -31,6 +31,11 @@ namespace QLVPP_Project.Model
         {
             get { return orderId; }
             set { orderId = value; }
+        }
+        public int PaymentId
+        {
+            get { return paymentId; }
+            set { paymentId = value; }
         }
         public int AccountId
         {

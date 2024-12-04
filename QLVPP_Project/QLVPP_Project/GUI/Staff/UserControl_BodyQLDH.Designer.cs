@@ -41,24 +41,28 @@
             // 
             // dataGridViewQLDH
             // 
+            this.dataGridViewQLDH.AllowUserToAddRows = false;
+            this.dataGridViewQLDH.AllowUserToDeleteRows = false;
+            this.dataGridViewQLDH.AllowUserToResizeColumns = false;
+            this.dataGridViewQLDH.AllowUserToResizeRows = false;
             this.dataGridViewQLDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQLDH.Location = new System.Drawing.Point(100, 277);
+            this.dataGridViewQLDH.Location = new System.Drawing.Point(148, 246);
             this.dataGridViewQLDH.Name = "dataGridViewQLDH";
+            this.dataGridViewQLDH.ReadOnly = true;
             this.dataGridViewQLDH.RowHeadersWidth = 51;
             this.dataGridViewQLDH.RowTemplate.Height = 24;
-            this.dataGridViewQLDH.Size = new System.Drawing.Size(819, 500);
+            this.dataGridViewQLDH.Size = new System.Drawing.Size(683, 530);
             this.dataGridViewQLDH.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(467, 36);
+            this.label2.Location = new System.Drawing.Point(415, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 50);
             this.label2.TabIndex = 1;
             this.label2.Text = "Hóa Đơn";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonThemHD
             // 
@@ -70,6 +74,7 @@
             this.buttonThemHD.TabIndex = 2;
             this.buttonThemHD.Text = "Thêm";
             this.buttonThemHD.UseVisualStyleBackColor = true;
+            this.buttonThemHD.Click += new System.EventHandler(this.buttonThemHD_Click);
             // 
             // buttonSuaHD
             // 
@@ -81,6 +86,7 @@
             this.buttonSuaHD.TabIndex = 3;
             this.buttonSuaHD.Text = "Sửa";
             this.buttonSuaHD.UseVisualStyleBackColor = true;
+            this.buttonSuaHD.Click += new System.EventHandler(this.buttonSuaHD_Click);
             // 
             // buttonXoaHD
             // 
@@ -92,12 +98,13 @@
             this.buttonXoaHD.TabIndex = 4;
             this.buttonXoaHD.Text = "Xóa";
             this.buttonXoaHD.UseVisualStyleBackColor = true;
+            this.buttonXoaHD.Click += new System.EventHandler(this.buttonXoaHD_Click);
             // 
             // buttonXemChiTietHD
             // 
             this.buttonXemChiTietHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonXemChiTietHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonXemChiTietHD.Location = new System.Drawing.Point(517, 146);
+            this.buttonXemChiTietHD.Location = new System.Drawing.Point(507, 146);
             this.buttonXemChiTietHD.Name = "buttonXemChiTietHD";
             this.buttonXemChiTietHD.Size = new System.Drawing.Size(226, 58);
             this.buttonXemChiTietHD.TabIndex = 5;
@@ -108,7 +115,7 @@
             // 
             this.buttonLamMoiHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonLamMoiHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonLamMoiHD.Location = new System.Drawing.Point(784, 146);
+            this.buttonLamMoiHD.Location = new System.Drawing.Point(760, 146);
             this.buttonLamMoiHD.Name = "buttonLamMoiHD";
             this.buttonLamMoiHD.Size = new System.Drawing.Size(183, 58);
             this.buttonLamMoiHD.TabIndex = 6;

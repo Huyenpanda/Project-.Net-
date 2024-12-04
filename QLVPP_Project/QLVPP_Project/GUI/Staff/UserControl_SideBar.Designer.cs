@@ -47,30 +47,17 @@ namespace QLVPP_Project
             // 
             // buttonQLDH
             // 
-<<<<<<< HEAD
-            this.buttonQLDH.BackgroundImage = global::QLVPP_Project.Properties.Resources.MaroonCloud_background;
+            this.buttonQLDH.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonQLDH.BackgroundImage")));
             this.buttonQLDH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonQLDH.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
             this.buttonQLDH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(194)))));
-            this.buttonQLDH.Location = new System.Drawing.Point(-32, 347);
+            this.buttonQLDH.Location = new System.Drawing.Point(0, 341);
             this.buttonQLDH.Name = "buttonQLDH";
-            this.buttonQLDH.Size = new System.Drawing.Size(364, 100);
+            this.buttonQLDH.Size = new System.Drawing.Size(300, 100);
             this.buttonQLDH.TabIndex = 4;
             this.buttonQLDH.Text = "Quản Lý Đơn Hàng";
             this.buttonQLDH.UseVisualStyleBackColor = true;
             this.buttonQLDH.Click += new System.EventHandler(this.buttonQLDH_Click);
-=======
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Modern No. 20", 14F, System.Drawing.FontStyle.Bold);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(246)))), ((int)(((byte)(194)))));
-            this.button2.Location = new System.Drawing.Point(0, 357);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(300, 100);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Quản Lý Đơn Hàng";
-            this.button2.UseVisualStyleBackColor = true;
->>>>>>> origin/develop
             // 
             // button_QuanLySanPham
             // 

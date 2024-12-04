@@ -33,6 +33,34 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
+
+        public bool Insert(Product model)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "INSERT INTO Product (ProductName, Price, Description, ImgUrl, CategoryId, Unit) " +
+                                 "VALUES (@ProductName, @Price, @Description, @ImgUrl, @CategoryId, @Unit)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@ProductName", model.ProductName);
+                    cmd.Parameters.AddWithValue("@Price", model.Price);
+                    cmd.Parameters.AddWithValue("@Description", model.Description);
+                    cmd.Parameters.AddWithValue("@ImgUrl", model.ImgUrl);
+                    cmd.Parameters.AddWithValue("@CategoryId", model.CategoryId);
+                    cmd.Parameters.AddWithValue("@Unit", model.Unit);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erorr ProductDao: {ex.Message}");
+                    return false;
+                }
+            }
+        }
         public DataTable getAllAndCategoryName()
         {
             DataTable data = new DataTable();
@@ -86,33 +114,6 @@ namespace QLVPP_Project.Dao
             }
         }
 
-        public bool Insert(Product model)
-        {
-            using (SqlConnection conn = new SqlConnection(connectString))
-            {
-                try
-                {
-                    conn.Open();
-                    string sql = "INSERT INTO Product (ProductName, Price, Description, ImgUrl, CategoryId, Unit) " +
-                                 "VALUES (@ProductName, @Price, @Description, @ImgUrl, @CategoryId, @Unit)";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@ProductName", model.ProductName);
-                    cmd.Parameters.AddWithValue("@Price", model.Price);
-                    cmd.Parameters.AddWithValue("@Description", model.Description);
-                    cmd.Parameters.AddWithValue("@ImgUrl", model.ImgUrl);
-                    cmd.Parameters.AddWithValue("@CategoryId", model.CategoryId);
-                    cmd.Parameters.AddWithValue("@Unit", model.Unit);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Erorr ProductDao: {ex.Message}");
-                    return false;
-                }
-            }
-        }
         public bool InsertNewProduct(Product product)
         {
             try

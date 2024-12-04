@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxUnit = new System.Windows.Forms.TextBox();
+            this.labelUnit = new System.Windows.Forms.Label();
             this.richTextBoxDescription = new System.Windows.Forms.RichTextBox();
             this.comboBoxCategoryName = new System.Windows.Forms.ComboBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
@@ -40,8 +42,6 @@
             this.buttonHuy = new System.Windows.Forms.Button();
             this.buttonLuu = new System.Windows.Forms.Button();
             this.labelThemSP = new System.Windows.Forms.Label();
-            this.textBoxUnit = new System.Windows.Forms.TextBox();
-            this.labelUnit = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,24 @@
             this.panel1.Size = new System.Drawing.Size(755, 675);
             this.panel1.TabIndex = 1;
             // 
+            // textBoxUnit
+            // 
+            this.textBoxUnit.Location = new System.Drawing.Point(305, 220);
+            this.textBoxUnit.Multiline = true;
+            this.textBoxUnit.Name = "textBoxUnit";
+            this.textBoxUnit.Size = new System.Drawing.Size(359, 28);
+            this.textBoxUnit.TabIndex = 15;
+            // 
+            // labelUnit
+            // 
+            this.labelUnit.AutoSize = true;
+            this.labelUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUnit.Location = new System.Drawing.Point(233, 220);
+            this.labelUnit.Name = "labelUnit";
+            this.labelUnit.Size = new System.Drawing.Size(53, 28);
+            this.labelUnit.TabIndex = 14;
+            this.labelUnit.Text = "Unit:";
+            // 
             // richTextBoxDescription
             // 
             this.richTextBoxDescription.Location = new System.Drawing.Point(305, 340);
@@ -81,6 +99,7 @@
             this.comboBoxCategoryName.Name = "comboBoxCategoryName";
             this.comboBoxCategoryName.Size = new System.Drawing.Size(359, 24);
             this.comboBoxCategoryName.TabIndex = 12;
+            this.comboBoxCategoryName.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategoryName_SelectedIndexChanged);
             // 
             // textBoxPrice
             // 
@@ -170,24 +189,6 @@
             this.labelThemSP.Size = new System.Drawing.Size(242, 44);
             this.labelThemSP.TabIndex = 0;
             this.labelThemSP.Text = "Thêm Sản Phẩm";
-            // 
-            // textBoxUnit
-            // 
-            this.textBoxUnit.Location = new System.Drawing.Point(305, 220);
-            this.textBoxUnit.Multiline = true;
-            this.textBoxUnit.Name = "textBoxUnit";
-            this.textBoxUnit.Size = new System.Drawing.Size(359, 28);
-            this.textBoxUnit.TabIndex = 15;
-            // 
-            // labelUnit
-            // 
-            this.labelUnit.AutoSize = true;
-            this.labelUnit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUnit.Location = new System.Drawing.Point(233, 220);
-            this.labelUnit.Name = "labelUnit";
-            this.labelUnit.Size = new System.Drawing.Size(53, 28);
-            this.labelUnit.TabIndex = 14;
-            this.labelUnit.Text = "Unit:";
             // 
             // FormThemSP
             // 

@@ -15,7 +15,7 @@ namespace QLVPP_Project.Model
         private string password;
         private string email;
         private string phone;
-
+        public Account() { }
         public Account(int accountId, string accountName, string role, string username, string password, string email, string phone)
         {
             this.accountId = accountId;

@@ -32,7 +32,5 @@ namespace QLVPP_Project.Model
             get { return paymentMethod; } 
             set { paymentMethod = value; } 
         }
-
-
     }
 }

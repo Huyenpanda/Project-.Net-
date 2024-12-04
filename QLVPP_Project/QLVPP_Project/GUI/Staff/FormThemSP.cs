@@ -138,7 +138,9 @@ namespace QLVPP_Project.GUI.Staff
             return true;
         }
 
+        private void comboBoxCategoryName_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

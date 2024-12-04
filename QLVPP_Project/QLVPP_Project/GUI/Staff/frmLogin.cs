@@ -1,5 +1,6 @@
 ﻿using QLVPP_Project.Dao;
 using QLVPP_Project.GUI.admin;
+using QLVPP_Project.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,8 @@ namespace QLVPP_Project
                 {
                     if (new AccountDao().isAdminOrStaff(un))
                     {
+                        SessionManager sessionManager = new SessionManager();
+                        //sessionManager.get;
                         this.Hide();
                         FrmTrangChu newFrm = new FrmTrangChu();
                         newFrm.Show();
