@@ -64,10 +64,17 @@ namespace QLVPP_Project
         }
         private void buttonSuaHD_Click(object sender, EventArgs e)
         {
-            // Hiển thị FormThemSP với thông tin sản phẩm cần sửa
-            FormCapNhatHoaDon formCapNhatHoaDon = new FormCapNhatHoaDon();
-            formCapNhatHoaDon.ShowDialog();
-            LoadData(); // Tải lại dữ liệu sau khi chỉnh sửa
+            if (dataGridViewQLDH.SelectedRows.Count > 0)
+            {
+                int selectedOrderId = Convert.ToInt32(dataGridViewQLDH.SelectedRows[0].Cells["OrderId"].Value);
+                FormCapNhatHoaDon formCapNhatHoaDon = new FormCapNhatHoaDon(true, selectedOrderId);
+                formCapNhatHoaDon.ShowDialog();
+                LoadData(); // Tải lại dữ liệu sau khi chỉnh sửa
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn để sửa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void buttonXoaHD_Click(object sender, EventArgs e)
@@ -120,6 +127,23 @@ namespace QLVPP_Project
             }
         }
 
-        
+        private void buttonLamMoiHD_Click(object sender, EventArgs e)
+        {
+            LoadData(); // Tải lại dữ liệu 
+        }
+
+        private void buttonXemChiTietHD_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewQLDH.SelectedRows.Count > 0)
+            {
+                int orderId = (int)dataGridViewQLDH.SelectedRows[0].Cells["OrderId"].Value;
+                FormChiTietHoaDon formChiTietHoaDon = new FormChiTietHoaDon(orderId);
+                formChiTietHoaDon.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Please select an order to view details.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

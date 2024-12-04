@@ -111,6 +111,12 @@
     <Compile Include="GUI\Staff\FormCapNhatHoaDon.Designer.cs">
       <DependentUpon>FormCapNhatHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Staff\FormChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Staff\FormChiTietHoaDon.Designer.cs">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Staff\FormQuanLySanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="GUI\Staff\FormCapNhatHoaDon.resx">
       <DependentUpon>FormCapNhatHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Staff\FormChiTietHoaDon.resx">
+      <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Staff\FormQuanLySanPham.resx">
     </EmbeddedResource>

@@ -11,17 +11,17 @@ namespace QLVPP_Project.Model
         private int orderDetailId;
         private int productId;
         private int quantity;
-        private double total;
+        private decimal total;
         private int orderId;
         private bool status;
         public OrderDetail() { }
-        public OrderDetail(int orderId, int productId, int quantity, double total) {
+        public OrderDetail(int orderId, int productId, int quantity, decimal total) {
             OrderId = orderId; 
             ProductId = productId; 
             Quantity = quantity; 
             Total = total; 
         }
-        public OrderDetail(int orderDetailId, int productId, int quantity, double total, int orderId, bool status)
+        public OrderDetail(int orderDetailId, int productId, int quantity, decimal total, int orderId, bool status)
         {
             this.orderDetailId = orderDetailId;
             this.productId = productId;
@@ -31,7 +31,7 @@ namespace QLVPP_Project.Model
             this.status = status;
         }
 
-        public OrderDetail(int productId, int quantity, double total, int orderId, bool status)
+        public OrderDetail(int productId, int quantity, decimal total, int orderId, bool status)
         {
             this.productId = productId;
             this.quantity = quantity;
@@ -56,7 +56,7 @@ namespace QLVPP_Project.Model
             get { return quantity; }
             set { quantity = value; }
         }
-        public double Total
+        public decimal Total
         {
             get { return total; }
             set { total = value; }

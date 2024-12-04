@@ -37,7 +37,19 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
-
+        public string GetPaymentMethodById(int paymentId)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionManager.getConnectString()))
+            {
+                conn.Open();
+                string sql = "SELECT PaymentMethod FROM Payment WHERE PaymentId = @PaymentId";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@PaymentId", paymentId);
+                string paymentMethod = (string)cmd.ExecuteScalar();
+                conn.Close();
+                return paymentMethod;
+            }
+        }
 
         public bool Insert(Payment order)
         {

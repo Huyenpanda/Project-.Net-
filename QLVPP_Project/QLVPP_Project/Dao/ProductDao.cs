@@ -11,11 +11,11 @@ namespace QLVPP_Project.Dao
 
         private static ProductDao instance;
 
-        public static ProductDao Instance 
+        public static ProductDao Instance
         {
-            get {if (instance == null) instance = new ProductDao(); return ProductDao.instance; }
+            get { if (instance == null) instance = new ProductDao(); return ProductDao.instance; }
             private set { ProductDao.instance = value; }
-            
+
         }
         public ProductDao() { }
 
@@ -32,6 +32,24 @@ namespace QLVPP_Project.Dao
                 conn.Close();
             }
             return data;
+        }
+        public string getProductNameById(int productId)
+        {
+            string productName = null;
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = "SELECT ProductName FROM Product WHERE ProductId = @ProductId";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@ProductId", productId);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    productName = reader["ProductName"].ToString();
+                }
+                conn.Close();
+            }
+            return productName;
         }
 
         public bool Insert(Product model)
@@ -141,7 +159,7 @@ namespace QLVPP_Project.Dao
             }
         }
 
-       
+
         public bool Delete(int id)
         {
             using (SqlConnection conn = new SqlConnection(connectString))
@@ -164,7 +182,7 @@ namespace QLVPP_Project.Dao
             }
         }
 
-        public DataTable searchByNameAndPrice(string proName,double fromPrice,double toPrice)
+        public DataTable searchByNameAndPrice(string proName, double fromPrice, double toPrice)
         {
             string query = "SELECT * FROM Product WHERE 1=1";
             if (!string.IsNullOrEmpty(proName))

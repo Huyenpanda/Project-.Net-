@@ -10,14 +10,25 @@ namespace QLVPP_Project.GUI.Staff
 {
     public partial class FormCapNhatHoaDon : Form
     {
+        private bool isEditing;
+        private int currentOrderId;
         ProductDao productDao = new ProductDao();
-        public FormCapNhatHoaDon()
+        public FormCapNhatHoaDon(bool isEditing = false, int orderId = 0)
         {
             InitializeComponent();
+            this.isEditing = isEditing; 
+            this.currentOrderId = orderId; 
+            if (isEditing) { 
+                labelThemSP.Text = "Sửa Thông Tin Hóa Đơn"; 
+                LoadOrderDetails(orderId); 
+            } else { 
+                labelThemSP.Text = "Thêm Hóa Đơn"; 
+            }
             LoadDataGridViewProduct();
-            InitializeOrderDetailGrid();
+            InitializeOrderDetailGrid(); 
             LoadPaymentMethods();
         }
+
         private void LoadPaymentMethods()
         {
             DataTable paymentMethods = PaymentDao.Instance.getAll();
@@ -192,6 +203,38 @@ namespace QLVPP_Project.GUI.Staff
             }
         }
 
+        private void LoadOrderDetails(int orderId)
+        {
+            Order order = OrderDao.Instance.getById(orderId);
+            if (order != null)
+            {
+                textBoxAccountName.Text = AccountDao.Instance.GetUserNameById(order.AccountId);
+                dateTimePickerCreateDate.Value = order.CreateDate;
+                textBoxTotal.Text = order.Total.ToString("C2");
+                comboBoxPaymentMethod.SelectedValue = order.PaymentId;
+
+                DataTable orderDetails = OrderDetailDao.Instance.getByOrderId(orderId);
+                foreach (DataRow row in orderDetails.Rows)
+                {
+                    dataGridViewOrderDetail.Rows.Add(row["ProductId"], ProductDao.Instance.getProductNameById((int)row["ProductId"]), row["Quantity"], row["Price"], row["Total"]);
+                }
+
+                var customer = AccountDao.Instance.getAccountById(order.AccountId);
+                if (customer != null)
+                {
+                    textBoxPhone.Text = customer.Phone;
+                    textBoxEmail.Text = customer.Email;
+                }
+
+                // Lấy trạng thái từ chi tiết hóa đơn đầu tiên
+                if (orderDetails.Rows.Count > 0)
+                {
+                    checkBoxStatus.Checked = (bool)orderDetails.Rows[0]["Status"];
+                }
+            }
+        }
+
+
         private void buttonLuuHD_Click(object sender, EventArgs e)
         {
             if (ValidateForm())
@@ -199,7 +242,7 @@ namespace QLVPP_Project.GUI.Staff
                 string accountName = textBoxAccountName.Text;
                 DateTime createDate = dateTimePickerCreateDate.Value;
                 int paymentId;
-                double totalPrice;
+                decimal totalPrice;
 
                 // Kiểm tra nếu phương thức thanh toán được chọn hay chưa
                 if (comboBoxPaymentMethod.SelectedIndex == -1)
@@ -210,7 +253,7 @@ namespace QLVPP_Project.GUI.Staff
                 paymentId = Convert.ToInt32(comboBoxPaymentMethod.SelectedValue);
 
                 // Kiểm tra và chuyển đổi tổng giá từ textBoxTotal
-                if (!double.TryParse(textBoxTotal.Text, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CurrentCulture, out totalPrice))
+                if (!decimal.TryParse(textBoxTotal.Text, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CurrentCulture, out totalPrice))
                 {
                     MessageBox.Show("Vui lòng thêm sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -220,7 +263,7 @@ namespace QLVPP_Project.GUI.Staff
                 string phone = textBoxPhone.Text.Trim();
                 string email = textBoxEmail.Text.Trim();
                 bool status = checkBoxStatus.Checked;
-                
+
                 // Kiểm tra định dạng email và số điện thoại
                 if (!IsValidEmail(email))
                 {
@@ -241,61 +284,111 @@ namespace QLVPP_Project.GUI.Staff
                     return;
                 }
 
-                // Tạo đối tượng hóa đơn mới
-                Order newOrder = new Order
+                if (isEditing)
                 {
-                    AccountId = accountId,
-                    CreateDate = createDate,
-                    PaymentId = paymentId,
-                    Total = totalPrice
-                };
-
-                // Chèn hóa đơn mới vào cơ sở dữ liệu
-                if (OrderDao.Instance.Insert(newOrder))
-                {
-                    // Lưu chi tiết hóa đơn vào cơ sở dữ liệu
-                    foreach (DataGridViewRow row in dataGridViewOrderDetail.Rows)
+                    Order updatedOrder = new Order
                     {
-                        if (row.Cells["ProductId"].Value == null || row.Cells["Quantity"].Value == null || row.Cells["Total"].Value == null)
+                        OrderId = currentOrderId,
+                        AccountId = accountId,
+                        CreateDate = createDate,
+                        PaymentId = paymentId,
+                        Total = totalPrice
+                    };
+
+                    if (OrderDao.Instance.Update(updatedOrder))
+                    {
+                        // Cập nhật chi tiết hóa đơn
+                        foreach (DataGridViewRow row in dataGridViewOrderDetail.Rows)
                         {
-                            continue;
+                            if (row.Cells["ProductId"].Value == null || row.Cells["Quantity"].Value == null || row.Cells["Total"].Value == null)
+                            {
+                                continue;
+                            }
+
+                            int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
+                            int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+                            decimal total = Convert.ToDecimal(row.Cells["Total"].Value);
+
+                            OrderDetail orderDetail = new OrderDetail
+                            {
+                                OrderId = updatedOrder.OrderId,
+                                ProductId = productId,
+                                Quantity = quantity,
+                                Total = total,
+                                Status = status
+                            };
+
+                            if (!OrderDetailDao.Instance.Update(orderDetail))
+                            {
+                                MessageBox.Show("Cập nhật chi tiết hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
                         }
 
-                        int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
-                        int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
-                        double total = Convert.ToDouble(row.Cells["Total"].Value);
-
-                        if (productId <= 0 || quantity <= 0 || total <= 0)
-                        {
-                            continue;
-                        }
-
-                        OrderDetail orderDetail = new OrderDetail
-                        {
-                            OrderId = newOrder.OrderId,
-                            ProductId = productId,
-                            Quantity = quantity,
-                            Total = total,
-                            Status = status // Lưu trạng thái từ checkBoxStatus
-                        };
-
-                        if (!OrderDetailDao.Instance.Insert(orderDetail))
-                        {
-                            MessageBox.Show("Lưu chi tiết hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
+                        MessageBox.Show("Đã cập nhật hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
-
-                    MessageBox.Show("Đã lưu hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Đóng form sau khi lưu thành công
+                    else
+                    {
+                        MessageBox.Show("Cập nhật hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Lưu hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Thêm mới hóa đơn
+                    Order newOrder = new Order
+                    {
+                        AccountId = accountId,
+                        CreateDate = createDate,
+                        PaymentId = paymentId,
+                        Total = totalPrice
+                    };
+
+                    if (OrderDao.Instance.Insert(newOrder))
+                    {
+                        // Lưu chi tiết hóa đơn
+                        foreach (DataGridViewRow row in dataGridViewOrderDetail.Rows)
+                        {
+                            if (row.Cells["ProductId"].Value == null || row.Cells["Quantity"].Value == null || row.Cells["Total"].Value == null)
+                            {
+                                continue;
+                            }
+
+                            int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
+                            int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+                            decimal total = Convert.ToDecimal(row.Cells["Total"].Value);
+
+                            if (productId <= 0 || quantity <= 0 || total <= 0)
+                            {
+                                continue;
+                            }
+
+                            OrderDetail orderDetail = new OrderDetail
+                            {
+                                OrderId = newOrder.OrderId,
+                                ProductId = productId,
+                                Quantity = quantity,
+                                Total = total,
+                                Status = status
+                            };
+
+                            if (!OrderDetailDao.Instance.Insert(orderDetail))
+                            {
+                                MessageBox.Show("Lưu chi tiết hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+
+                        MessageBox.Show("Đã lưu hóa đơn thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close(); // Đóng form sau khi lưu thành công
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
-
         private bool ValidateForm()
         {
             if (string.IsNullOrEmpty(textBoxAccountName.Text))

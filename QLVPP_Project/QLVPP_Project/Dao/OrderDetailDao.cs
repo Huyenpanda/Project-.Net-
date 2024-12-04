@@ -37,6 +37,67 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
+        public DataTable getByOrderId(int orderId)
+        {
+            DataTable data = new DataTable();
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                conn.Open();
+                string sql = @"
+            SELECT 
+                od.ProductId,
+                p.ProductName,
+                od.Quantity,
+                p.Price,
+                (od.Quantity * p.Price) AS Total
+            FROM OrderDetail od
+            INNER JOIN Product p ON od.ProductId = p.ProductId
+            WHERE od.OrderId = @OrderId";
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@OrderId", orderId);
+                SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                adap.Fill(data);
+                conn.Close();
+            }
+            return data;
+        }
+        public DataTable getOrderDetailByOrderId(int orderId)
+        {
+            DataTable data = new DataTable();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectString))
+                {
+                    conn.Open();
+                    string sql = @"
+                SELECT od.OrderDetailId,od.OrderId, od.ProductId, p.ProductName, p.Price, od.Quantity, od.Total,  od.Status 
+                FROM OrderDetail od
+                JOIN Product p ON od.ProductId = p.ProductId
+                WHERE od.OrderId = @OrderId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@OrderId", orderId);
+                    SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                    adap.Fill(data);
+                    conn.Close();
+                }
+
+                if (data.Rows.Count > 0)
+                {
+                    Console.WriteLine("Data loaded successfully!");
+                }
+                else
+                {
+                    Console.WriteLine("No data found for this OrderId!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading data: " + ex.Message);
+            }
+
+            return data;
+        }
 
         public bool Insert(OrderDetail model)
         {
@@ -99,13 +160,28 @@ namespace QLVPP_Project.Dao
                 }
             }
         }
-
+        /*  public DataTable getByOrderId(int orderId)
+          {
+              DataTable data = new DataTable();
+              using (SqlConnection conn = new SqlConnection(connectString))
+              {
+                  conn.Open();
+                  string sql = "SELECT * FROM OrderDetail WHERE OrderId = @OrderId";
+                  SqlCommand cmd = new SqlCommand(sql, conn);
+                  cmd.Parameters.AddWithValue("@OrderId", orderId);
+                  SqlDataAdapter adap = new SqlDataAdapter(cmd);
+                  adap.Fill(data);
+                  conn.Close();
+              }
+              return data;
+          }
+*/
         public OrderDetail getById(int id)
         {
             throw new NotImplementedException();
         }
 
-       
+
 
         public bool Update(OrderDetail model)
         {

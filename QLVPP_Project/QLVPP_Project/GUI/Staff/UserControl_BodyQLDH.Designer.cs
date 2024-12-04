@@ -110,6 +110,7 @@
             this.buttonXemChiTietHD.TabIndex = 5;
             this.buttonXemChiTietHD.Text = "Xem Chi Tiết";
             this.buttonXemChiTietHD.UseVisualStyleBackColor = true;
+            this.buttonXemChiTietHD.Click += new System.EventHandler(this.buttonXemChiTietHD_Click);
             // 
             // buttonLamMoiHD
             // 
@@ -121,6 +122,7 @@
             this.buttonLamMoiHD.TabIndex = 6;
             this.buttonLamMoiHD.Text = "Làm mới";
             this.buttonLamMoiHD.UseVisualStyleBackColor = true;
+            this.buttonLamMoiHD.Click += new System.EventHandler(this.buttonLamMoiHD_Click);
             // 
             // UserControl_BodyQLDH
             // 

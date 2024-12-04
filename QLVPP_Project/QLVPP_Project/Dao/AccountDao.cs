@@ -37,7 +37,57 @@ namespace QLVPP_Project.Dao
         }
 
 
-        public bool Insert(Account acc)
+            // Thêm phương thức GetUserNameById
+            public string GetUserNameById(int accountId)
+            {
+                string userName = null;
+                using (SqlConnection conn = new SqlConnection(connectString))
+                {
+                    conn.Open();
+                    string sql = "SELECT UserName FROM Account WHERE AccountId = @AccountId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@AccountId", accountId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        userName = reader["UserName"].ToString();
+                    }
+                    conn.Close();
+                }
+                return userName;
+            }
+
+            // Thêm phương thức getAccountById
+            public Account getAccountById(int accountId)
+            {
+                Account account = null;
+                using (SqlConnection conn = new SqlConnection(connectString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Account WHERE AccountId = @AccountId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@AccountId", accountId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        account = new Account
+                        {
+                            AccountId = (int)reader["AccountId"],
+                            AccountName = reader["AccountName"].ToString(),
+                            UserName = reader["UserName"].ToString(),
+                            PassWord = reader["PassWord"].ToString(),
+                            Email = reader["Email"].ToString(),
+                            Phone = reader["Phone"].ToString(),
+                            Role = reader["Role"].ToString()
+                        };
+                    }
+                    conn.Close();
+                }
+                return account;
+            }
+
+
+    public bool Insert(Account acc)
         {
             using (SqlConnection conn = new SqlConnection(connectString))
             {

@@ -79,3 +79,4 @@ D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\
 D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.UserControlThemSanPham.resources
 >>>>>>> origin/develop
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormCapNhatHoaDon.resources
+C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormChiTietHoaDon.resources

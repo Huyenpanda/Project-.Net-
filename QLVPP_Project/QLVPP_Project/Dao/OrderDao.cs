@@ -51,17 +51,18 @@ namespace QLVPP_Project.Dao
                 if (reader.Read())
                 {
                     order = new Order(
-                        (int)reader["OrderId"],
-                        (int)reader["AccountId"],
-                        (DateTime)reader["CreateDate"],
-                        (double)reader["Total"],
-                        (int)reader["PaymentId"]
+                        reader.GetInt32(reader.GetOrdinal("OrderId")),
+                        reader.GetInt32(reader.GetOrdinal("AccountId")),
+                        reader.GetDateTime(reader.GetOrdinal("CreateDate")),
+                        reader.GetDecimal(reader.GetOrdinal("Total")),
+                        reader.GetInt32(reader.GetOrdinal("PaymentId"))
                     );
                 }
                 conn.Close();
             }
             return order;
         }
+
         public bool Insert(Order order)
         {
             using (SqlConnection conn = new SqlConnection(connectString))
