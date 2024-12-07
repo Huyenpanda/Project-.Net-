@@ -34,7 +34,7 @@ namespace QLVPP_Project.GUI.Staff
 
                 // Gọi phương thức LoadOrderDetails để kiểm tra xem nó có hoạt động không
                 LoadOrderDetails(orderId);
-                LoadOrderStatus(orderId);
+                //LoadOrderStatus(orderId);
                 LoadPaymentMethod(order.PaymentId);
                 LoadOrderTotal(orderId);
                 LoadAccountDetails(order.AccountId);
@@ -94,7 +94,7 @@ namespace QLVPP_Project.GUI.Staff
             }
         }
 
-        private void LoadOrderStatus(int orderId)
+        /*private void LoadOrderStatus(int orderId)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace QLVPP_Project.GUI.Staff
             {
                 Console.WriteLine("Error loading order status: " + ex.Message);
             }
-        }
+        }*/
 
         private void LoadPaymentMethod(int paymentId)
         {

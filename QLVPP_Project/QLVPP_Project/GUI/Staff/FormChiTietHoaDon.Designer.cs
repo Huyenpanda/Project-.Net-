@@ -37,8 +37,6 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
-            this.checkBoxStatus = new System.Windows.Forms.CheckBox();
-            this.labelStatus = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewDSSPDH = new System.Windows.Forms.DataGridView();
             this.labelPaymentMethod = new System.Windows.Forms.Label();
@@ -64,8 +62,6 @@
             this.panel1.Controls.Add(this.labelEmail);
             this.panel1.Controls.Add(this.textBoxPhone);
             this.panel1.Controls.Add(this.labelPhone);
-            this.panel1.Controls.Add(this.checkBoxStatus);
-            this.panel1.Controls.Add(this.labelStatus);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridViewDSSPDH);
             this.panel1.Controls.Add(this.labelPaymentMethod);
@@ -85,6 +81,7 @@
             // 
             this.textBoxPaymentMethod.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPaymentMethod.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxPaymentMethod.Enabled = false;
             this.textBoxPaymentMethod.Location = new System.Drawing.Point(258, 469);
             this.textBoxPaymentMethod.Multiline = true;
             this.textBoxPaymentMethod.Name = "textBoxPaymentMethod";
@@ -94,6 +91,7 @@
             // 
             // textBoxCreateDate
             // 
+            this.textBoxCreateDate.Enabled = false;
             this.textBoxCreateDate.Location = new System.Drawing.Point(258, 236);
             this.textBoxCreateDate.Multiline = true;
             this.textBoxCreateDate.Name = "textBoxCreateDate";
@@ -103,6 +101,7 @@
             // 
             // textBoxOrderId
             // 
+            this.textBoxOrderId.Enabled = false;
             this.textBoxOrderId.Location = new System.Drawing.Point(258, 132);
             this.textBoxOrderId.Multiline = true;
             this.textBoxOrderId.Name = "textBoxOrderId";
@@ -122,6 +121,7 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(258, 361);
             this.textBoxEmail.Multiline = true;
             this.textBoxEmail.Name = "textBoxEmail";
@@ -141,6 +141,7 @@
             // 
             // textBoxPhone
             // 
+            this.textBoxPhone.Enabled = false;
             this.textBoxPhone.Location = new System.Drawing.Point(258, 293);
             this.textBoxPhone.Multiline = true;
             this.textBoxPhone.Name = "textBoxPhone";
@@ -157,26 +158,6 @@
             this.labelPhone.Size = new System.Drawing.Size(71, 28);
             this.labelPhone.TabIndex = 27;
             this.labelPhone.Text = "Phone:";
-            // 
-            // checkBoxStatus
-            // 
-            this.checkBoxStatus.AutoSize = true;
-            this.checkBoxStatus.Location = new System.Drawing.Point(258, 528);
-            this.checkBoxStatus.Name = "checkBoxStatus";
-            this.checkBoxStatus.Size = new System.Drawing.Size(136, 20);
-            this.checkBoxStatus.TabIndex = 26;
-            this.checkBoxStatus.Text = "Chưa Thanh Toán";
-            this.checkBoxStatus.UseVisualStyleBackColor = true;
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(172, 519);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(69, 28);
-            this.labelStatus.TabIndex = 25;
-            this.labelStatus.Text = "Status:";
             // 
             // label1
             // 
@@ -216,6 +197,7 @@
             // 
             this.textBoxTotal.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTotal.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxTotal.Enabled = false;
             this.textBoxTotal.Location = new System.Drawing.Point(258, 414);
             this.textBoxTotal.Multiline = true;
             this.textBoxTotal.Name = "textBoxTotal";
@@ -225,6 +207,7 @@
             // 
             // textBoxAccountName
             // 
+            this.textBoxAccountName.Enabled = false;
             this.textBoxAccountName.Location = new System.Drawing.Point(258, 184);
             this.textBoxAccountName.Multiline = true;
             this.textBoxAccountName.Name = "textBoxAccountName";
@@ -306,8 +289,6 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label labelPhone;
-        private System.Windows.Forms.CheckBox checkBoxStatus;
-        private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridViewDSSPDH;
         private System.Windows.Forms.Label labelPaymentMethod;
