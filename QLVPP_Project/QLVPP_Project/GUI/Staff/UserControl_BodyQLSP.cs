@@ -163,7 +163,7 @@ namespace QLVPP_Project
                 if (double.TryParse(textBoxGiaTu.Text, out  fromPrice) &&
                     double.TryParse(textBoxGiaDen.Text, out  toPrice))
                 {
-                    if (fromPrice >= 0 && toPrice >= fromPrice)
+                    if (fromPrice >= 0 && toPrice >= fromPrice && fromPrice <= toPrice)
                     {
                         // Search by price range
                          searchResult = ProductDao.Instance.searchByNameAndPrice(null, fromPrice, toPrice);
