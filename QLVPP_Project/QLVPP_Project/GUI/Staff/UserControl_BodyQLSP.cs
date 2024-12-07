@@ -151,19 +151,20 @@ namespace QLVPP_Project
         private void buttonTimKiem_Click(object sender, EventArgs e)
         {
             string productName = textBoxTenSP.Text.Trim(); 
-            int.TryParse(textBoxMaSP.Text.Trim(), out int productId); 
+            int.TryParse(textBoxMaSP.Text, out int productId);
             double.TryParse(textBoxGiaTu.Text, out double fromPrice); 
-            double.TryParse(textBoxGiaDen.Text, out double toPrice); 
-            DataTable searchResult = ProductDao.Instance.searchByCriteria(productName, productId, fromPrice, toPrice); 
-            dataGridViewQLSP.DataSource = searchResult;
-            
+            double.TryParse(textBoxGiaDen.Text, out double toPrice);
+            DataTable searchResult;
+            //searchResult = ProductDao.Instance.searchByCriteria(productName, productId, fromPrice, toPrice); 
+            //dataGridViewQLSP.DataSource = searchResult;
+
             if (radioButtonTheoGia.Checked)
             {
                 // Validate price inputs
                 if (double.TryParse(textBoxGiaTu.Text, out  fromPrice) &&
                     double.TryParse(textBoxGiaDen.Text, out  toPrice))
                 {
-                    if (fromPrice >= 0 && toPrice >= fromPrice && fromPrice <= toPrice)
+                    if (fromPrice >= 0 && toPrice >= 0 && fromPrice <= toPrice)
                     {
                         // Search by price range
                          searchResult = ProductDao.Instance.searchByNameAndPrice(null, fromPrice, toPrice);
@@ -172,11 +173,13 @@ namespace QLVPP_Project
                     else
                     {
                         MessageBox.Show("Giá từ phải nhỏ hơn hoặc bằng giá đến.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng nhập giá trị hợp lệ cho khoảng giá.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
             else if (radioButtonTheoTen.Checked)
@@ -190,9 +193,17 @@ namespace QLVPP_Project
                 else { 
                     MessageBox.Show("Vui lòng nhập tên sản phẩm.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 }
-            } else
+            }
+            else if(radioButtonTheoMa.Checked)
             {
-
+                DataTable dt =  ProductDao.Instance.getById(productId);
+                if (dt.Rows.Count > 0)
+                {
+                    searchResult = ProductDao.Instance.getById(productId);
+                    dataGridViewQLSP.DataSource = searchResult;
+                }
+                else
+                    MessageBox.Show("Ko tìm thấy sản phẩm.","Lỗi",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }
 

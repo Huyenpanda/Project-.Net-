@@ -26,10 +26,7 @@ namespace QLVPP_Project.Dao
             using (SqlConnection conn = new SqlConnection(connectString))
             {
                 conn.Open();
-                string sql = "SELECT o.OrderId, o.CreateDate, a.Username, od.Status, o.Total " +
-                             "FROM [Order] o " +
-                             "JOIN [Account] a ON o.AccountId = a.AccountId " +
-                             "JOIN [OrderDetail] od ON o.OrderId = od.OrderId";
+                string sql = "Select * from [Order]";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adap = new SqlDataAdapter(cmd);
                 adap.Fill(data);
@@ -156,8 +153,28 @@ namespace QLVPP_Project.Dao
 
         public bool Update(Order order)
         {
-            // Implement the update logic here
-            return true;
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "UPDATE [Order] SET CreateDate = @date, Total = @total, PaymentId = @PaymentId " +
+                                 "WHERE OrderId = @OrderId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@date", order.CreateDate);
+                    cmd.Parameters.AddWithValue("@total", order.Total);
+                    cmd.Parameters.AddWithValue("@PaymentId", order.PaymentId);
+                    //cmd.Parameters.AddWithValue("@ImgUrl", model.ImgUrl);
+                    cmd.Parameters.AddWithValue("@OrderId", order.OrderId);
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error OrderDao: {ex.Message}");
+                    return false;
+                }
+            }
         }
 
     }

@@ -273,6 +273,7 @@
             this.ClientSize = new System.Drawing.Size(1394, 722);
             this.Controls.Add(this.panel1);
             this.Name = "FormChiTietHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormChiTietHoaDon";
             this.Load += new System.EventHandler(this.FormChiTietHoaDon_Load);
             this.panel1.ResumeLayout(false);

@@ -176,18 +176,85 @@ namespace QLVPP_Project.Dao
               return data;
           }
 */
+        public OrderDetail getByProductIdAndOrderId(int proId, int orderId)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    // SQL để lấy thông tin chi tiết hóa đơn theo ProductId và OrderId
+                    string sql = "SELECT * " +
+                                 "FROM OrderDetail WHERE ProductId = @ProductId AND OrderId = @OrderId";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@ProductId", proId);
+                    cmd.Parameters.AddWithValue("@OrderId", orderId);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        // Tạo đối tượng OrderDetail và gán giá trị từ cơ sở dữ liệu
+                        OrderDetail orderDetail = new OrderDetail
+                        {
+                            OrderDetailId = reader.GetInt32(reader.GetOrdinal("OrderDetailId")),
+                            OrderId = reader.GetInt32(reader.GetOrdinal("OrderId")),
+                            ProductId = reader.GetInt32(reader.GetOrdinal("ProductId")),
+                            Quantity = reader.GetInt32(reader.GetOrdinal("Quantity")),
+                            Total = reader.GetDecimal(reader.GetOrdinal("Total")),
+                            Status = reader.GetBoolean(reader.GetOrdinal("Status"))
+                        };
+                        return orderDetail;
+                    }
+                    else
+                    {
+                        // Nếu không có dữ liệu trả về null
+                        return null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                    return null;
+                }
+            }
+        }
+
+
+
+
+        public bool Update(OrderDetail od)
+        {
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "UPDATE OrderDetail SET ProductId = @ProductId, Quantity = @Quantity, Total = @total " +
+                                 "WHERE OrderId = @OrderId AND OrderDetailId = @OrderDetailId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@ProductId", od.ProductId);
+                    cmd.Parameters.AddWithValue("@Quantity", od.Quantity);
+                    cmd.Parameters.AddWithValue("@total", od.Total);
+                    cmd.Parameters.AddWithValue("@OrderId", od.OrderId);
+                    cmd.Parameters.AddWithValue("@OrderDetailId", od.OrderDetailId);
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error OrderDetailDao: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
         public OrderDetail getById(int id)
         {
             throw new NotImplementedException();
         }
-
-
-
-        public bool Update(OrderDetail model)
-        {
-            throw new NotImplementedException();
-        }
-
-
     }
 }

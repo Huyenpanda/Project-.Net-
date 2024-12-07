@@ -14,6 +14,7 @@ namespace QLVPP_Project
         {
             InitializeComponent();
             LoadData();
+            
         }
 
         private void LoadData()
@@ -21,33 +22,15 @@ namespace QLVPP_Project
             try
             {
                 dataGridViewQLDH.DataSource = OrderDao.Instance.getAll();
+                dataGridViewQLDH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                // Cấu hình hiển thị cho các cột
-                dataGridViewQLDH.Columns["OrderId"].HeaderText = "OrderId";
-                dataGridViewQLDH.Columns["CreateDate"].HeaderText = "CreateDate";
-                dataGridViewQLDH.Columns["Username"].HeaderText = "Username";
-                dataGridViewQLDH.Columns["Status"].HeaderText = "Status";
-                dataGridViewQLDH.Columns["Total"].HeaderText = "Total";
-
-                // Đặt kích thước cho các cột
-                dataGridViewQLDH.Columns["OrderId"].Width = 100;
-                dataGridViewQLDH.Columns["CreateDate"].Width = 150;
-                dataGridViewQLDH.Columns["Username"].Width = 150;
-                dataGridViewQLDH.Columns["Status"].Width = 80;
-                dataGridViewQLDH.Columns["Total"].Width = 150;
-
-                // Căn giữa tên các cột
+                // Tuỳ chọn: Căn chỉnh nội dung cột nếu cần
                 foreach (DataGridViewColumn column in dataGridViewQLDH.Columns)
                 {
+                    column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
                     column.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 }
 
-                // Căn giữa nội dung các cột
-                dataGridViewQLDH.Columns["OrderId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewQLDH.Columns["CreateDate"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewQLDH.Columns["Username"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewQLDH.Columns["Status"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dataGridViewQLDH.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {

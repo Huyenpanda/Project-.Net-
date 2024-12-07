@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|d:\\learn\\subject\\.net\\projectquanlyvanphongpham\\qlvpp_project\\qlvpp_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|d:\\learn\\subject\\.net\\projectquanlyvanphongpham\\qlvpp_project\\qlvpp_project\\gui\\staff\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|d:\\learn\\subject\\.net\\projectquanlyvanphongpham\\qlvpp_project\\qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,34 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmTrangChu.cs [Design]",
-              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
-              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T08:44:55.479Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmTrangChu.cs",
-              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
-              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
-              "ViewState": "AgIAABUBAAAAAAAAAIA3wC0BAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T09:11:47.496Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -68,29 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmLogin.cs",
-              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\staff\\FrmLogin.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\staff\\FrmLogin.cs",
-              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\staff\\FrmLogin.cs",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\staff\\FrmLogin.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAawCUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T09:54:24.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\Program.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Program.cs",
-              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\Program.cs",
-              "RelativeToolTip": "QLVPP_Project\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "Title": "FrmTrangChu.cs [Design]",
+              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
+              "RelativeToolTip": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T09:52:26.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-07T19:16:51.682Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

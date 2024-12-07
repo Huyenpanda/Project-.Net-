@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -12,20 +13,32 @@ namespace QLVPP_Project.GUI.Staff
     {
         private bool isEditing;
         private int currentOrderId;
+        private DataTable orderDetailTable;
         ProductDao productDao = new ProductDao();
         public FormCapNhatHoaDon(bool isEditing = false, int orderId = 0)
         {
             InitializeComponent();
+            InitializeOrderDetailGrid();
             this.isEditing = isEditing; 
             this.currentOrderId = orderId; 
             if (isEditing) { 
                 labelThemSP.Text = "Sửa Thông Tin Hóa Đơn"; 
                 LoadOrderDetails(orderId); 
-            } else { 
-                labelThemSP.Text = "Thêm Hóa Đơn"; 
             }
+            else
+            {
+                labelThemSP.Text = "Thêm Hóa Đơn";
+                Account acc = AccountDao.Instance.getAccountById(SessionManager.AccountId);
+                textBoxAccountName.Text = acc.AccountName;
+                textBoxPhone.Text = acc.Phone;
+                textBoxEmail.Text = acc.Email;
+            }
+            textBoxAccountName.ReadOnly = true;
+            textBoxEmail.ReadOnly = true;
+            textBoxPhone.ReadOnly = true;
+
             LoadDataGridViewProduct();
-            InitializeOrderDetailGrid(); 
+            
             LoadPaymentMethods();
         }
 
@@ -40,23 +53,16 @@ namespace QLVPP_Project.GUI.Staff
 
         private void InitializeOrderDetailGrid()
         {
-            dataGridViewOrderDetail.Columns.Add("ProductId", "ProductId");
-            dataGridViewOrderDetail.Columns.Add("ProductName", "ProductName");
-            dataGridViewOrderDetail.Columns.Add("Quantity", "Quantity");
-            dataGridViewOrderDetail.Columns.Add("Price", "Price");
-            dataGridViewOrderDetail.Columns.Add("Total", "Total");
+            orderDetailTable = new DataTable();
+            orderDetailTable.Columns.Add("ProductId", typeof(int));
+            orderDetailTable.Columns.Add("ProductName", typeof(string));
+            orderDetailTable.Columns.Add("Quantity", typeof(int));
+            orderDetailTable.Columns.Add("Price", typeof(double));
+            orderDetailTable.Columns.Add("Total", typeof(double));
+
+            dataGridViewOrderDetail.DataSource = orderDetailTable;
         }
-        private void checkBoxStatus_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxStatus.Checked)
-            {
-                checkBoxStatus.Text = "Đã Thanh Toán";
-            }
-            else
-            {
-                checkBoxStatus.Text = "Chưa Thanh Toán";
-            }
-        }
+       
 
 
         private void LoadDataGridViewProduct()
@@ -83,14 +89,13 @@ namespace QLVPP_Project.GUI.Staff
 
                 string productName = selectedRow.Cells["ProductName"].Value.ToString();
                 double price = Convert.ToDouble(selectedRow.Cells["Price"].Value);
-                
 
-                // Hiển thị hộp thoại nhập số lượng
                 using (var form = new Form())
                 {
                     form.Width = 250;
                     form.Height = 150;
                     form.Text = "Thêm Sản Phẩm";
+                    form.StartPosition = FormStartPosition.CenterScreen;
 
                     var label = new Label() { Left = 10, Top = 10, Text = "Nhập số lượng:" };
                     var textBox = new TextBox() { Left = 10, Top = 30, Width = 200 };
@@ -107,19 +112,25 @@ namespace QLVPP_Project.GUI.Staff
                         {
                             double total = price * quantity;
 
-                            // Kiểm tra xem sản phẩm đã tồn tại trong DataGridView chưa
-                            foreach (DataGridViewRow existingRow in dataGridViewOrderDetail.Rows)
+                            // Kiểm tra xem sản phẩm đã tồn tại trong DataTable
+                            var existRow = orderDetailTable.AsEnumerable()
+                                .FirstOrDefault(row => row.Field<int>("ProductId") == ProductId);
+                            if (existRow != null)
                             {
-                                if (existingRow.Cells["ProductId"].Value != null &&
-                                    Convert.ToInt32(existingRow.Cells["ProductId"].Value) == ProductId)
-                                {
-                                    MessageBox.Show("Sản phẩm này đã được thêm vào chi tiết hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    return;
-                                }
+                                MessageBox.Show("Sản phẩm đã được thêm vào hóa đơn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
                             }
 
-                            // Thêm sản phẩm vào chi tiết hóa đơn
-                            dataGridViewOrderDetail.Rows.Add(ProductId, productName, quantity, price, total);
+                            // Thêm hàng mới vào DataTable
+                            DataRow newRow = orderDetailTable.NewRow();
+                            newRow["ProductId"] = ProductId;
+                            newRow["ProductName"] = productName;
+                            newRow["Quantity"] = quantity;
+                            newRow["Price"] = price;
+                            newRow["Total"] = total;
+                            orderDetailTable.Rows.Add(newRow);
+
+                            // Cập nhật tổng tiền
                             UpdateTotalPrice();
                         }
                         else
@@ -134,6 +145,8 @@ namespace QLVPP_Project.GUI.Staff
                 MessageBox.Show("Vui lòng chọn một sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
 
         private void buttonXoaSP_Click(object sender, EventArgs e)
         {
@@ -214,11 +227,12 @@ namespace QLVPP_Project.GUI.Staff
                 comboBoxPaymentMethod.SelectedValue = order.PaymentId;
 
                 DataTable orderDetails = OrderDetailDao.Instance.getByOrderId(orderId);
-                foreach (DataRow row in orderDetails.Rows)
-                {
-                    dataGridViewOrderDetail.Rows.Add(row["ProductId"], ProductDao.Instance.getProductNameById((int)row["ProductId"]), row["Quantity"], row["Price"], row["Total"]);
-                }
-
+                //foreach (DataRow row in orderDetails.Rows)
+                //{
+                //    dataGridViewOrderDetail.Rows.Add(row["ProductId"], ProductDao.Instance.getProductNameById((int)row["ProductId"]), row["Quantity"], row["Price"], row["Total"]);
+                //}
+                dataGridViewOrderDetail.DataSource = null;
+                dataGridViewOrderDetail.DataSource = orderDetails;
                 var customer = AccountDao.Instance.getAccountById(order.AccountId);
                 if (customer != null)
                 {
@@ -227,10 +241,7 @@ namespace QLVPP_Project.GUI.Staff
                 }
 
                 // Lấy trạng thái từ chi tiết hóa đơn đầu tiên
-                if (orderDetails.Rows.Count > 0)
-                {
-                    checkBoxStatus.Checked = (bool)orderDetails.Rows[0]["Status"];
-                }
+                
             }
         }
 
@@ -262,7 +273,7 @@ namespace QLVPP_Project.GUI.Staff
                 // Lấy giá trị từ input
                 string phone = textBoxPhone.Text.Trim();
                 string email = textBoxEmail.Text.Trim();
-                bool status = checkBoxStatus.Checked;
+                
 
                 // Kiểm tra định dạng email và số điện thoại
                 if (!IsValidEmail(email))
@@ -277,13 +288,13 @@ namespace QLVPP_Project.GUI.Staff
                 }
 
                 // Đảm bảo tài khoản khách hàng tồn tại và cập nhật Phone, Email
-                int accountId = EnsureCustomerAccount(accountName);
+                int accountId = SessionManager.AccountId;
                 if (!AccountDao.Instance.UpdateContactInfo(accountId, phone, email))
                 {
                     MessageBox.Show("Cập nhật thông tin tài khoản thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+               
                 if (isEditing)
                 {
                     Order updatedOrder = new Order
@@ -308,16 +319,17 @@ namespace QLVPP_Project.GUI.Staff
                             int productId = Convert.ToInt32(row.Cells["ProductId"].Value);
                             int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
                             decimal total = Convert.ToDecimal(row.Cells["Total"].Value);
-
+                            OrderDetail odt = OrderDetailDao.Instance.getByProductIdAndOrderId(productId, updatedOrder.OrderId);
                             OrderDetail orderDetail = new OrderDetail
                             {
+                                OrderDetailId = odt.OrderDetailId,
                                 OrderId = updatedOrder.OrderId,
                                 ProductId = productId,
                                 Quantity = quantity,
                                 Total = total,
-                                Status = status
+                                Status = false
                             };
-
+                           
                             if (!OrderDetailDao.Instance.Update(orderDetail))
                             {
                                 MessageBox.Show("Cập nhật chi tiết hóa đơn thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -369,7 +381,7 @@ namespace QLVPP_Project.GUI.Staff
                                 ProductId = productId,
                                 Quantity = quantity,
                                 Total = total,
-                                Status = status
+                                Status = false
                             };
 
                             if (!OrderDetailDao.Instance.Insert(orderDetail))
@@ -426,28 +438,7 @@ namespace QLVPP_Project.GUI.Staff
             return phone.All(char.IsDigit) && phone.Length >= 10 && phone.Length <= 15;
         }
 
-        private int EnsureCustomerAccount(string accountName)
-        {
-            int accountId = AccountDao.Instance.GetAccountIdByName(accountName);
-            if (accountId == -1) // Tài khoản chưa tồn tại
-            {
-                Account newAccount = new Account
-                {
-                    AccountName = accountName,
-                    Role = "customer",
-                    UserName = accountName, // Giả sử Username bằng AccountName
-                    PassWord = "defaultPassword", // Mật khẩu mặc định
-                    Email = "", // Có thể cập nhật sau
-                    Phone = ""  // Có thể cập nhật sau
-                };
-
-                if (AccountDao.Instance.Insert(newAccount))
-                {
-                    accountId = AccountDao.Instance.GetAccountIdByName(accountName);
-                }
-            }
-            return accountId;
-        }
+        
 
         private void buttonHuy_Click(object sender, EventArgs e)
         {

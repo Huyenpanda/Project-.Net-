@@ -80,3 +80,6 @@ D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\
 >>>>>>> origin/develop
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormCapNhatHoaDon.resources
 C:\LT.NET\QLVPP\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormChiTietHoaDon.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormCapNhatHoaDon.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.GUI.Staff.FormChiTietHoaDon.resources
+D:\LEARN\SUBJECT\.NET\ProjectQuanLyVanPhongPham\QLVPP_Project\QLVPP_Project\obj\Debug\QLVPP_Project.UserControl_BodyQLDH.resources

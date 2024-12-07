@@ -975,9 +975,9 @@ namespace QLVPP_Project.GUI.admin
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1695, 1021);
+            this.Controls.Add(this.panelQLSP);
             this.Controls.Add(this.panelQLTK);
             this.Controls.Add(this.panelBCTK);
-            this.Controls.Add(this.panelQLSP);
             this.Controls.Add(this.panel_Header);
             this.Controls.Add(this.panel_SideBar);
             this.Margin = new System.Windows.Forms.Padding(4);

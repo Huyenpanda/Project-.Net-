@@ -292,14 +292,14 @@ namespace QLVPP_Project.Dao
             }
             return data;
         }
-        public int GetAccountIdByName(string accountName)
+        public int GetAccountIdByUserName(string username)
         {
             using (SqlConnection conn = new SqlConnection(connectString))
             {
                 conn.Open();
-                string sql = "SELECT AccountId FROM Account WHERE AccountName = @AccountName";
+                string sql = "SELECT AccountId FROM Account WHERE Username = @username";
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@AccountName", accountName);
+                cmd.Parameters.AddWithValue("@username", username);
                 object result = cmd.ExecuteScalar();
                 conn.Close();
 

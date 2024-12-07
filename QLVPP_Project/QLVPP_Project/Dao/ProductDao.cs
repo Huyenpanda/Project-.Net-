@@ -268,7 +268,33 @@ namespace QLVPP_Project.Dao
         }
 
 
-        public Product getById(int id)
+        public DataTable getById(int productId)
+        {
+            DataTable data = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(connectString))
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Product WHERE ProductId = @ProductId";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@ProductId", productId);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(data);
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+            return data;
+        }
+
+        Product ModelDao<Product>.getById(int id)
         {
             throw new NotImplementedException();
         }

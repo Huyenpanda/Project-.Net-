@@ -164,7 +164,7 @@ INSERT INTO [OrderDetail] ([ProductId], [Quantity], [Total], [OrderId], [Status]
 
 
 
-Select * from Account 
+
 
 ALTER TABLE [Product] ALTER COLUMN [Price] Decimal(12, 2);
 ALTER TABLE [Order] ALTER COLUMN [Total] Decimal(12, 2);
@@ -211,3 +211,7 @@ GROUP BY
         WHEN Rank <= 5 THEN ProductName
         ELSE 'Other'
     END;
+
+	Select * from Account 
+	Select * from [Order]
+	SELECT * FROM OrderDetail WHERE OrderId = 21 AND OrderDetailId = 

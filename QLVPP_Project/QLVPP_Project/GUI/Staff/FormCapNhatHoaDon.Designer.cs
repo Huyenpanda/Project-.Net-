@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.textBoxPhone = new System.Windows.Forms.TextBox();
+            this.labelPhone = new System.Windows.Forms.Label();
             this.buttonSuaSP = new System.Windows.Forms.Button();
             this.buttonLuuHD = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,12 +51,6 @@
             this.buttonHuy = new System.Windows.Forms.Button();
             this.buttonThemSP = new System.Windows.Forms.Button();
             this.labelThemSP = new System.Windows.Forms.Label();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.checkBoxStatus = new System.Windows.Forms.CheckBox();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.labelPhone = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.labelEmail = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrderDetail)).BeginInit();
@@ -65,8 +63,6 @@
             this.panel1.Controls.Add(this.labelEmail);
             this.panel1.Controls.Add(this.textBoxPhone);
             this.panel1.Controls.Add(this.labelPhone);
-            this.panel1.Controls.Add(this.checkBoxStatus);
-            this.panel1.Controls.Add(this.labelStatus);
             this.panel1.Controls.Add(this.buttonSuaSP);
             this.panel1.Controls.Add(this.buttonLuuHD);
             this.panel1.Controls.Add(this.label2);
@@ -87,8 +83,44 @@
             this.panel1.Controls.Add(this.labelThemSP);
             this.panel1.Location = new System.Drawing.Point(3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1600, 722);
+            this.panel1.Size = new System.Drawing.Size(1587, 722);
             this.panel1.TabIndex = 1;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(305, 422);
+            this.textBoxEmail.Multiline = true;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(308, 28);
+            this.textBoxEmail.TabIndex = 30;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(217, 422);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(63, 28);
+            this.labelEmail.TabIndex = 29;
+            this.labelEmail.Text = "Email:";
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Location = new System.Drawing.Point(305, 346);
+            this.textBoxPhone.Multiline = true;
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(308, 28);
+            this.textBoxPhone.TabIndex = 28;
+            // 
+            // labelPhone
+            // 
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(217, 346);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(71, 28);
+            this.labelPhone.TabIndex = 27;
+            this.labelPhone.Text = "Phone:";
             // 
             // buttonSuaSP
             // 
@@ -106,7 +138,7 @@
             // 
             this.buttonLuuHD.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.buttonLuuHD.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonLuuHD.Location = new System.Drawing.Point(390, 582);
+            this.buttonLuuHD.Location = new System.Drawing.Point(451, 582);
             this.buttonLuuHD.Name = "buttonLuuHD";
             this.buttonLuuHD.Size = new System.Drawing.Size(162, 61);
             this.buttonLuuHD.TabIndex = 22;
@@ -117,7 +149,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(813, 592);
+            this.label2.Location = new System.Drawing.Point(813, 370);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(457, 44);
             this.label2.TabIndex = 21;
@@ -126,7 +158,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(813, 296);
+            this.label1.Location = new System.Drawing.Point(813, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(548, 44);
             this.label1.TabIndex = 20;
@@ -151,7 +183,7 @@
             this.dataGridViewProduct.AllowUserToResizeColumns = false;
             this.dataGridViewProduct.AllowUserToResizeRows = false;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(820, 359);
+            this.dataGridViewProduct.Location = new System.Drawing.Point(820, 432);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.RowHeadersWidth = 51;
@@ -162,7 +194,7 @@
             // dataGridViewOrderDetail
             // 
             this.dataGridViewOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrderDetail.Location = new System.Drawing.Point(820, 149);
+            this.dataGridViewOrderDetail.Location = new System.Drawing.Point(820, 227);
             this.dataGridViewOrderDetail.Name = "dataGridViewOrderDetail";
             this.dataGridViewOrderDetail.RowHeadersWidth = 51;
             this.dataGridViewOrderDetail.RowTemplate.Height = 24;
@@ -193,7 +225,7 @@
             this.textBoxTotal.Multiline = true;
             this.textBoxTotal.Name = "textBoxTotal";
             this.textBoxTotal.ReadOnly = true;
-            this.textBoxTotal.Size = new System.Drawing.Size(205, 28);
+            this.textBoxTotal.Size = new System.Drawing.Size(247, 28);
             this.textBoxTotal.TabIndex = 14;
             // 
             // comboBoxPaymentMethod
@@ -201,7 +233,7 @@
             this.comboBoxPaymentMethod.FormattingEnabled = true;
             this.comboBoxPaymentMethod.Location = new System.Drawing.Point(305, 260);
             this.comboBoxPaymentMethod.Name = "comboBoxPaymentMethod";
-            this.comboBoxPaymentMethod.Size = new System.Drawing.Size(161, 24);
+            this.comboBoxPaymentMethod.Size = new System.Drawing.Size(247, 24);
             this.comboBoxPaymentMethod.TabIndex = 12;
             // 
             // textBoxAccountName
@@ -275,63 +307,6 @@
             this.labelThemSP.TabIndex = 0;
             this.labelThemSP.Text = "Thêm Hóa Đơn";
             // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(219, 311);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(69, 28);
-            this.labelStatus.TabIndex = 25;
-            this.labelStatus.Text = "Status:";
-            // 
-            // checkBoxStatus
-            // 
-            this.checkBoxStatus.AutoSize = true;
-            this.checkBoxStatus.Location = new System.Drawing.Point(305, 320);
-            this.checkBoxStatus.Name = "checkBoxStatus";
-            this.checkBoxStatus.Size = new System.Drawing.Size(136, 20);
-            this.checkBoxStatus.TabIndex = 26;
-            this.checkBoxStatus.Text = "Chưa Thanh Toán";
-            this.checkBoxStatus.UseVisualStyleBackColor = true;
-            this.checkBoxStatus.CheckedChanged += new System.EventHandler(this.checkBoxStatus_CheckedChanged);
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Location = new System.Drawing.Point(305, 370);
-            this.textBoxPhone.Multiline = true;
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(308, 28);
-            this.textBoxPhone.TabIndex = 28;
-            // 
-            // labelPhone
-            // 
-            this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(217, 370);
-            this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(71, 28);
-            this.labelPhone.TabIndex = 27;
-            this.labelPhone.Text = "Phone:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(305, 438);
-            this.textBoxEmail.Multiline = true;
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(308, 28);
-            this.textBoxEmail.TabIndex = 30;
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(225, 438);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(63, 28);
-            this.labelEmail.TabIndex = 29;
-            this.labelEmail.Text = "Email:";
-            // 
             // FormCapNhatHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -339,6 +314,7 @@
             this.ClientSize = new System.Drawing.Size(1591, 733);
             this.Controls.Add(this.panel1);
             this.Name = "FormCapNhatHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCapNhatHoaDon";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -369,8 +345,6 @@
         private System.Windows.Forms.Button buttonLuuHD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.CheckBox checkBoxStatus;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox textBoxPhone;

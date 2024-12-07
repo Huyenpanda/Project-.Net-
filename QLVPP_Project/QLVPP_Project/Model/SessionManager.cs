@@ -8,9 +8,9 @@ namespace QLVPP_Project.Model
 {
     public class SessionManager
     {
-        private int accountId = 0;
+        private static int accountId = 0;
 
-        public int AccountId
+        public static int AccountId
         {
             get { return accountId; }
             set { accountId = value; }

@@ -1,70 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\",
+  "WorkspaceRootPath": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\formchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\formchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\formchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\formchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\usercontrol_bodyqldh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\usercontrol_bodyqldh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\usercontrol_bodyqldh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\usercontrol_bodyqldh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\dao\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\formcapnhathoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\formcapnhathoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\gui\\staff\\formcapnhathoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\staff\\formcapnhathoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\dao\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\dao\\orderdetaildao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\model\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\model\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\model\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\model\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\dao\\orderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\dao\\orderdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\model\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\model\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\model\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\dao\\accountdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\dao\\paymentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\dao\\paymentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|C:\\LT.NET\\QLVPP\\QLVPP_Project\\qlvpp_project\\model\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\model\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|d:\\learn\\subject\\.net\\projectquanlyvanphongpham\\qlvpp_project\\qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9308B895-A43D-4273-B574-1544C9C1E606}|QLVPP_Project\\QLVPP_Project.csproj|solutionrelative:qlvpp_project\\gui\\admin\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,6 +18,10 @@
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
@@ -85,203 +29,15 @@
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormChiTietHoaDon.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "Title": "FrmTrangChu.cs [Design]",
+              "DocumentMoniker": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs",
+              "ToolTip": "D:\\LEARN\\SUBJECT\\.NET\\ProjectQuanLyVanPhongPham\\QLVPP_Project\\QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
+              "RelativeToolTip": "QLVPP_Project\\GUI\\admin\\FrmTrangChu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T09:28:17.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormChiTietHoaDon.cs [Design]",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs [Design]",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\Staff\\FormChiTietHoaDon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T09:13:27.938Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Account.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Account.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Model\\Account.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Account.cs",
-              "RelativeToolTip": "QLVPP_Project\\Model\\Account.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T05:49:19.707Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AccountDao.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\AccountDao.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Dao\\AccountDao.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\AccountDao.cs",
-              "RelativeToolTip": "QLVPP_Project\\Dao\\AccountDao.cs",
-              "ViewState": "AQIAAB0BAAAAAAAAAAAwwD8BAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T04:08:47.176Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserControl_BodyQLDH.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAASwFoAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T03:54:04.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserControl_BodyQLDH.cs [Design]",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs [Design]",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\Staff\\UserControl_BodyQLDH.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T03:51:20.604Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Order.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Model\\Order.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Order.cs",
-              "RelativeToolTip": "QLVPP_Project\\Model\\Order.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T20:03:57.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "PaymentDao.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\PaymentDao.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Dao\\PaymentDao.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\PaymentDao.cs",
-              "RelativeToolTip": "QLVPP_Project\\Dao\\PaymentDao.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAiwEAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T19:46:15.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Payment.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Model\\Payment.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Payment.cs",
-              "RelativeToolTip": "QLVPP_Project\\Model\\Payment.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T19:39:08.107Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductDao.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\ProductDao.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Dao\\ProductDao.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\ProductDao.cs",
-              "RelativeToolTip": "QLVPP_Project\\Dao\\ProductDao.cs",
-              "ViewState": "AQIAAL8AAAAAAAAAAAAUwHwAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:29:19.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OrderDao.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\OrderDao.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Dao\\OrderDao.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\OrderDao.cs",
-              "RelativeToolTip": "QLVPP_Project\\Dao\\OrderDao.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:07:42.997Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OrderDetail.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\OrderDetail.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Model\\OrderDetail.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\OrderDetail.cs",
-              "RelativeToolTip": "QLVPP_Project\\Model\\OrderDetail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:05:38.064Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderDetailDao.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\OrderDetailDao.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Dao\\OrderDetailDao.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Dao\\OrderDetailDao.cs",
-              "RelativeToolTip": "QLVPP_Project\\Dao\\OrderDetailDao.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAmwEgAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:05:32.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Product.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\Model\\Product.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\Model\\Product.cs",
-              "RelativeToolTip": "QLVPP_Project\\Model\\Product.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:22:19.318Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormCapNhatHoaDon.cs",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs",
-              "ViewState": "AQIAALkAAAAAAAAAAAArwNoAAABtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:17:25.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormCapNhatHoaDon.cs [Design]",
-              "DocumentMoniker": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs",
-              "RelativeDocumentMoniker": "QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs",
-              "ToolTip": "C:\\LT.NET\\QLVPP\\QLVPP_Project\\QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs [Design]",
-              "RelativeToolTip": "QLVPP_Project\\GUI\\Staff\\FormCapNhatHoaDon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:15:58.688Z",
+              "WhenOpened": "2024-12-07T19:16:51.682Z",
               "EditorCaption": " [Design]"
             }
           ]

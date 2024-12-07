@@ -46,9 +46,7 @@ namespace QLVPP_Project
                 if (new AccountDao().checkLogin(un, pass))
                 {
                     if (new AccountDao().isAdminOrStaff(un))
-                    {
-                        SessionManager sessionManager = new SessionManager();
-                        //sessionManager.get;
+                    {   
                         this.Hide();
                         FrmTrangChu newFrm = new FrmTrangChu();
                         newFrm.Show();
@@ -59,6 +57,7 @@ namespace QLVPP_Project
                         FormQuanLySanPham newFrm = new FormQuanLySanPham();
                         newFrm.Show();
                     }
+                    SessionManager.AccountId = AccountDao.Instance.GetAccountIdByUserName(un);
                 }
             }
             else

@@ -40,7 +40,9 @@ namespace QLVPP_Project
 
         private void buttonThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
+            FrmLogin newFrm = new FrmLogin();
+            newFrm.ShowDialog();
         }
 
         private void buttonQLDH_Click(object sender, EventArgs e)
@@ -52,6 +54,7 @@ namespace QLVPP_Project
             else
             {
                 FormQuanLySanPham formQuanLySanPham = new FormQuanLySanPham();
+                
                 formQuanLySanPham.Show();
                 formQuanLySanPham.ChangeBody(new UserControl_BodyQLDH());
             }
